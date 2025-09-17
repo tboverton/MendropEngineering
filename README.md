@@ -1,2 +1,2 @@
 # MendropReportAutomation
-for reports, proposals, and bridge alter=native analyses
+for reports, proposals, and bridge alternative analysis
