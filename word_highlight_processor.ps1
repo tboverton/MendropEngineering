@@ -1,6 +1,6 @@
-# Word Document Highlight Processor
+# Word Document Highlight Processor 
 # This script opens a Word template, removes yellow highlights, adds highlights for <<*>> patterns, and saves the document
-
+   
 param(
     [Parameter(Mandatory=$true)]
     [string]$InputPath,
