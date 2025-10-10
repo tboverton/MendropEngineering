@@ -283,8 +283,21 @@ function Invoke-MailMerge {
         $fieldData = @{}
         for ($i = 0; $i -lt $recordset.Fields.Count; $i++) {
             $fieldName = $recordset.Fields($i).Name
-            $fieldValue = $recordset.Fields($i).Value
-            if ($fieldValue -eq $null) { $fieldValue = "" }
+            
+            # Handle NULL/DBNull values properly
+            try {
+                $fieldValue = $recordset.Fields($i).Value
+                if ($fieldValue -eq $null -or [System.DBNull]::Value.Equals($fieldValue)) {
+                    $fieldValue = ""
+                } else {
+                    # Convert to string to ensure compatibility
+                    $fieldValue = $fieldValue.ToString()
+                }
+            } catch {
+                # If there's any error accessing the value, use empty string
+                $fieldValue = ""
+            }
+            
             $fieldData[$fieldName] = $fieldValue
         }
        
@@ -292,23 +305,75 @@ function Invoke-MailMerge {
         $connection.Close()
        
         Write-ColorOutput "Retrieved $($fieldData.Count) fields from database" "Green"
+        
+        # Show first few field names for debugging
+        $sampleFields = ($fieldData.Keys | Select-Object -First 10) -join ", "
+        Write-ColorOutput "Sample field names: $sampleFields" "Cyan"
+        
+        # Show template fields we're looking for (from the document you showed)
+        $templateFields = @("hydraulic_modeling_tool", "tool_version", "tool_source", "model_range_upstream", "upstream_bridge_id", "model_range_downstream", "geospatial_tool", "geospatial_software", "elevation_model_detail", "elevation_model_source", "elevation_model_website", "data_source_type", "data_source_location", "data_collection_year", "manning_n_min", "manning_n_max", "flood_event_1", "flood_event_2", "flood_event_3", "boundary_condition_type", "slope_value", "number_of_alternatives", "alt1_structure_type", "alt1_span_length", "alt1_total_length", "alt1_girder_depth", "alt1_low_chord_elevation", "alt1_length_comparison", "alt2_structure_type", "alt2_span_length", "alt2_total_length", "alt2_girder_depth", "alt2_low_chord_elevation", "alt2_length_comparison")
+        
+        $matchingFields = @()
+        foreach ($templateField in $templateFields) {
+            if ($fieldData.ContainsKey($templateField)) {
+                $matchingFields += $templateField
+            }
+        }
+        
+        if ($matchingFields.Count -gt 0) {
+            Write-ColorOutput "Found matching template fields: $($matchingFields -join ', ')" "Green"
+        } else {
+            Write-ColorOutput "No matching template fields found in database" "Yellow"
+            Write-ColorOutput "Template expects fields like: $($templateFields[0..4] -join ', ')..." "Yellow"
+        }
        
         # Replace merge fields in document
         $Range = $Document.Range()
+        $replacedFields = 0
         foreach ($fieldName in $fieldData.Keys) {
-            $mergeField = "<<$fieldName>>"
-            $fieldValue = $fieldData[$fieldName]
-           
-            # Find and replace merge fields
-            $Range.Find.ClearFormatting()
-            $Range.Find.Replacement.ClearFormatting()
-            $Range.Find.Text = $mergeField
-            $Range.Find.Replacement.Text = $fieldValue
-            $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-           
-            # Reset range for next search
-            $Range = $Document.Range()
+            try {
+                $fieldValue = $fieldData[$fieldName]
+                $fieldReplaced = $false
+               
+                # Try both merge field formats: «field» and <<field>>
+                $mergeFormats = @("«$fieldName»", "<<$fieldName>>")
+                
+                foreach ($mergeField in $mergeFormats) {
+                    # Reset range for each search
+                    $Range = $Document.Range()
+                    
+                    # Find and replace merge fields
+                    $Range.Find.ClearFormatting()
+                    $Range.Find.Replacement.ClearFormatting()
+                    $Range.Find.Text = $mergeField
+                    $Range.Find.Replacement.Text = $fieldValue
+                    
+                    # Set orange highlighting for replaced text
+                    $Range.Find.Replacement.Highlight = $true
+                    $Range.Find.Replacement.Font.Color = 255  # Orange color (RGB: 255, 165, 0)
+                    
+                    # Execute the find and replace with ReplaceAll (2)
+                    $replaceCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
+                    
+                    if ($replaceCount -gt 0) {
+                        $fieldReplaced = $true
+                        Write-ColorOutput "Replaced field: $mergeField -> $fieldValue (Count: $replaceCount)" "Green"
+                    } else {
+                        Write-ColorOutput "Field not found in document: $mergeField" "Yellow"
+                    }
+                }
+                
+                if ($fieldReplaced) {
+                    $replacedFields++
+                }
+               
+            } catch {
+                Write-ColorOutput "Warning: Could not replace field '$fieldName': $($_.Exception.Message)" "Yellow"
+                # Continue with next field
+            }
         }
+        
+        Write-ColorOutput "Successfully replaced $replacedFields merge fields" "Green"
        
         Write-ColorOutput "Mail merge completed successfully" "Green"
         return $true
@@ -383,24 +448,34 @@ function Process-WordDocument {
             Write-ColorOutput "No project data provided - preserving all template content" "Yellow"
         }
        
-        # Step 3: Find and highlight remaining text matching <<*>> pattern
+        # Step 3: Find and highlight remaining merge field patterns
         Write-ColorOutput "Adding highlights for remaining merge field patterns..." "Yellow"
        
-        # Reset the range for new search
+        $totalHighlighted = 0
+        
+        # Highlight remaining «*» patterns (guillemets)
         $Range = $Document.Range()
         $Range.Find.ClearFormatting()
         $Range.Find.Replacement.ClearFormatting()
-       
-        # Set up the search for <<*>> pattern
+        $Range.Find.Text = "«*»"
+        $Range.Find.MatchWildcards = $true
+        $Range.Find.Replacement.Highlight = $true
+        $Range.Find.Replacement.Text = "^&"  # Replace with same text but highlighted
+        $guillemetsCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
+        if ($guillemetsCount) { $totalHighlighted++ }
+        
+        # Highlight remaining <<*>> patterns (angle brackets)
+        $Range = $Document.Range()
+        $Range.Find.ClearFormatting()
+        $Range.Find.Replacement.ClearFormatting()
         $Range.Find.Text = "<<*>>"
         $Range.Find.MatchWildcards = $true
         $Range.Find.Replacement.Highlight = $true
         $Range.Find.Replacement.Text = "^&"  # Replace with same text but highlighted
+        $angleBracketsCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
+        if ($angleBracketsCount) { $totalHighlighted++ }
        
-        # Execute the replacement
-        $replaceCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-       
-        Write-ColorOutput "Merge field patterns highlighted" "Green"
+        Write-ColorOutput "Merge field patterns highlighted (both «field» and <<field>> formats)" "Green"
        
         # Step 4: Generate save path with project naming convention
         if ($SavePath -eq "") {

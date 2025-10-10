@@ -1,0 +1,1488 @@
+﻿[2025-10-09 22:02:46] [INFO] === NEW SESSION STARTED ===
+[2025-10-09 22:02:47] [INFO] Script: word_marco_dotm.ps1
+[2025-10-09 22:02:47] [INFO] User: user
+[2025-10-09 22:02:47] [INFO] Computer: MICHAELMICAH03
+[2025-10-09 22:02:47] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-09 22:02:47] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-09 22:02:47] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-09 22:02:47] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-09 22:02:47] [INFO] Project Number: H-025-999-25
+[2025-10-09 22:02:47] [INFO] Bridge ID: K160.0
+[2025-10-09 22:02:47] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:02:47] [SUCCESS] Starting Word document processing...
+[2025-10-09 22:02:51] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-09 22:02:53] [SUCCESS] Document opened successfully
+[2025-10-09 22:02:53] [WARN] Removing yellow highlights...
+[2025-10-09 22:02:53] [SUCCESS] Yellow highlights removed
+[2025-10-09 22:02:53] [WARN] Attempting database connection for mail merge...
+[2025-10-09 22:02:53] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-09 22:02:55] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-09 22:02:55] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-09 22:02:55] [WARN] Database connection failed - preserving template content
+[2025-10-09 22:02:55] [ERROR] Error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-09 22:02:56] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-09 22:02:56] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-09 22:02:56] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-09 22:02:56] [SUCCESS] Merge field patterns highlighted
+[2025-10-09 22:02:56] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:02:57] [SUCCESS] Document saved successfully
+[2025-10-09 22:02:59] [SUCCESS] Processing completed successfully!
+[2025-10-09 22:02:59] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:02:59] [INFO] === Processing Complete ===
+[2025-10-09 22:02:59] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:03:00] [WARN] Creating Word template with VBA integration...
+[2025-10-09 22:03:00] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-09 22:03:00] [WARN] Save the following VBA code to a file for reference:
+[2025-10-09 22:03:00] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-09 22:03:00] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-09 22:03:00] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-09 22:03:00] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:10:42] [INFO] === NEW SESSION STARTED ===
+[2025-10-09 22:10:42] [INFO] Script: word_marco_dotm.ps1
+[2025-10-09 22:10:42] [INFO] User: user
+[2025-10-09 22:10:42] [INFO] Computer: MICHAELMICAH03
+[2025-10-09 22:10:42] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-09 22:10:42] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-09 22:10:43] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-09 22:10:43] [INFO] Project Number: H-025-999-25
+[2025-10-09 22:10:43] [INFO] Bridge ID: K160.0
+[2025-10-09 22:10:43] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:10:43] [SUCCESS] Starting Word document processing...
+[2025-10-09 22:10:45] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-09 22:10:47] [SUCCESS] Document opened successfully
+[2025-10-09 22:10:47] [WARN] Removing yellow highlights...
+[2025-10-09 22:10:47] [SUCCESS] Yellow highlights removed
+[2025-10-09 22:10:49] [WARN] Attempting database connection for mail merge...
+[2025-10-09 22:10:49] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-09 22:10:51] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-09 22:10:51] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-09 22:10:51] [WARN] Database connection failed - preserving template content
+[2025-10-09 22:10:51] [ERROR] Error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-09 22:10:51] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-09 22:10:51] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-09 22:10:51] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-09 22:10:52] [SUCCESS] Merge field patterns highlighted
+[2025-10-09 22:10:52] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:10:52] [SUCCESS] Document saved successfully
+[2025-10-09 22:10:54] [SUCCESS] Processing completed successfully!
+[2025-10-09 22:10:54] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:10:54] [INFO] === Processing Complete ===
+[2025-10-09 22:10:54] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-09 22:10:54] [WARN] Creating Word template with VBA integration...
+[2025-10-09 22:10:54] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-09 22:10:54] [WARN] Save the following VBA code to a file for reference:
+[2025-10-09 22:10:54] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-09 22:10:55] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-09 22:10:55] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-09 22:10:55] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:33:21] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 14:33:21] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 14:33:21] [INFO] User: user
+[2025-10-10 14:33:21] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 14:33:21] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 14:33:21] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 14:33:21] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 14:33:21] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:33:21] [INFO] Project Number: H-025-999-25
+[2025-10-10 14:33:21] [INFO] Bridge ID: K160.0
+[2025-10-10 14:33:21] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:33:22] [SUCCESS] Starting Word document processing...
+[2025-10-10 14:33:25] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:33:27] [SUCCESS] Document opened successfully
+[2025-10-10 14:33:28] [WARN] Removing yellow highlights...
+[2025-10-10 14:33:29] [SUCCESS] Yellow highlights removed
+[2025-10-10 14:33:30] [WARN] Attempting database connection for mail merge...
+[2025-10-10 14:33:30] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 14:33:32] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.136' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 14:33:32] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.136' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 14:33:34] [WARN] Database connection failed - preserving template content
+[2025-10-10 14:33:34] [ERROR] Error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.136' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 14:33:35] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 14:33:35] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 14:33:35] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 14:33:38] [SUCCESS] Merge field patterns highlighted
+[2025-10-10 14:33:40] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:33:41] [SUCCESS] Document saved successfully
+[2025-10-10 14:33:43] [SUCCESS] Processing completed successfully!
+[2025-10-10 14:33:44] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:33:44] [INFO] === Processing Complete ===
+[2025-10-10 14:33:44] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:33:44] [WARN] Creating Word template with VBA integration...
+[2025-10-10 14:33:44] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 14:33:44] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 14:33:44] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:33:44] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:33:44] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 14:33:45] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:38:43] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 14:38:43] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 14:38:43] [INFO] User: user
+[2025-10-10 14:38:43] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 14:38:43] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 14:38:44] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 14:38:44] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 14:38:44] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:38:44] [INFO] Project Number: H-025-999-25
+[2025-10-10 14:38:44] [INFO] Bridge ID: K160.0
+[2025-10-10 14:38:44] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:38:44] [SUCCESS] Starting Word document processing...
+[2025-10-10 14:38:47] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:38:49] [SUCCESS] Document opened successfully
+[2025-10-10 14:38:49] [WARN] Removing yellow highlights...
+[2025-10-10 14:38:50] [SUCCESS] Yellow highlights removed
+[2025-10-10 14:38:50] [WARN] Attempting database connection for mail merge...
+[2025-10-10 14:38:50] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 14:38:52] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.136' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 14:38:53] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.136' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 14:38:53] [WARN] Database connection failed - preserving template content
+[2025-10-10 14:38:53] [ERROR] Error: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '135.129.124.136' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 14:38:53] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 14:38:55] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 14:38:55] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 14:38:57] [SUCCESS] Merge field patterns highlighted
+[2025-10-10 14:38:57] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:38:58] [ERROR] Error occurred: Word cannot save this file because it is already open elsewhere. (C:\...\H-025-999-25_K160.0_DRAFT.docx)
+[2025-10-10 14:39:00] [ERROR] Script failed: Word cannot save this file because it is already open elsewhere. (C:\...\H-025-999-25_K160.0_DRAFT.docx)
+[2025-10-10 14:39:00] [ERROR] Stack trace: at Process-WordDocument, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 423
+at <ScriptBlock>, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 658
+at <ScriptBlock>, <No file>: line 1
+[2025-10-10 14:39:00] [ERROR] === SESSION FAILED ===
+[2025-10-10 14:39:01] [ERROR] Error: Word cannot save this file because it is already open elsewhere. (C:\...\H-025-999-25_K160.0_DRAFT.docx)
+[2025-10-10 14:39:01] [ERROR] Stack trace: at Process-WordDocument, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 423
+at <ScriptBlock>, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 658
+at <ScriptBlock>, <No file>: line 1
+[2025-10-10 14:41:40] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 14:41:40] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 14:41:40] [INFO] User: user
+[2025-10-10 14:41:40] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 14:41:40] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 14:41:40] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 14:41:40] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 14:41:40] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:41:41] [INFO] Project Number: H-025-999-25
+[2025-10-10 14:41:41] [INFO] Bridge ID: K160.0
+[2025-10-10 14:41:41] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:41:41] [SUCCESS] Starting Word document processing...
+[2025-10-10 14:41:43] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:41:48] [SUCCESS] Document opened successfully
+[2025-10-10 14:41:48] [WARN] Removing yellow highlights...
+[2025-10-10 14:41:49] [SUCCESS] Yellow highlights removed
+[2025-10-10 14:41:49] [WARN] Attempting database connection for mail merge...
+[2025-10-10 14:41:49] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 14:41:51] [SUCCESS] Database connection established successfully
+[2025-10-10 14:41:52] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 14:41:52] [ERROR] Error during mail merge: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+[2025-10-10 14:41:52] [WARN] Database connection failed - preserving template content
+[2025-10-10 14:41:52] [ERROR] Error: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+[2025-10-10 14:41:52] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 14:41:52] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 14:41:52] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 14:41:53] [SUCCESS] Merge field patterns highlighted
+[2025-10-10 14:41:53] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:41:54] [SUCCESS] Document saved successfully
+[2025-10-10 14:41:57] [SUCCESS] Processing completed successfully!
+[2025-10-10 14:41:57] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:41:57] [INFO] === Processing Complete ===
+[2025-10-10 14:41:57] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:41:57] [WARN] Creating Word template with VBA integration...
+[2025-10-10 14:41:57] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 14:41:57] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 14:41:57] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:41:57] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:41:58] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 14:41:58] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:50:04] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 14:50:04] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 14:50:04] [INFO] User: user
+[2025-10-10 14:50:04] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 14:50:04] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 14:50:04] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 14:50:04] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 14:50:04] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:50:04] [INFO] Project Number: H-025-999-25
+[2025-10-10 14:50:04] [INFO] Bridge ID: K160.0
+[2025-10-10 14:50:04] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:50:04] [SUCCESS] Starting Word document processing...
+[2025-10-10 14:50:07] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:50:10] [SUCCESS] Document opened successfully
+[2025-10-10 14:50:10] [WARN] Removing yellow highlights...
+[2025-10-10 14:50:11] [SUCCESS] Yellow highlights removed
+[2025-10-10 14:50:11] [WARN] Attempting database connection for mail merge...
+[2025-10-10 14:50:11] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 14:50:12] [SUCCESS] Database connection established successfully
+[2025-10-10 14:50:13] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 14:50:14] [ERROR] Error during mail merge: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+[2025-10-10 14:50:14] [WARN] Database connection failed - preserving template content
+[2025-10-10 14:50:14] [ERROR] Error: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+[2025-10-10 14:50:14] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 14:50:15] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 14:50:15] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 14:50:15] [SUCCESS] Merge field patterns highlighted
+[2025-10-10 14:50:15] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:50:16] [SUCCESS] Document saved successfully
+[2025-10-10 14:50:17] [SUCCESS] Processing completed successfully!
+[2025-10-10 14:50:17] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:50:18] [INFO] === Processing Complete ===
+[2025-10-10 14:50:18] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:50:18] [WARN] Creating Word template with VBA integration...
+[2025-10-10 14:50:18] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 14:50:18] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 14:50:18] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:50:18] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:50:18] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 14:50:18] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:55:59] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 14:55:59] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 14:55:59] [INFO] User: user
+[2025-10-10 14:55:59] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 14:55:59] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 14:55:59] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 14:55:59] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 14:55:59] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:55:59] [INFO] Project Number: H-025-999-25
+[2025-10-10 14:55:59] [INFO] Bridge ID: K160.0
+[2025-10-10 14:55:59] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:55:59] [SUCCESS] Starting Word document processing...
+[2025-10-10 14:56:02] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:56:04] [SUCCESS] Document opened successfully
+[2025-10-10 14:56:04] [WARN] Removing yellow highlights...
+[2025-10-10 14:56:06] [SUCCESS] Yellow highlights removed
+[2025-10-10 14:56:06] [WARN] Attempting database connection for mail merge...
+[2025-10-10 14:56:06] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 14:56:09] [SUCCESS] Database connection established successfully
+[2025-10-10 14:56:12] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 14:56:22] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 14:56:22] [SUCCESS] Mail merge completed successfully
+[2025-10-10 14:56:22] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 14:56:22] [SUCCESS] Merge field patterns highlighted
+[2025-10-10 14:56:22] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:56:23] [SUCCESS] Document saved successfully
+[2025-10-10 14:56:24] [SUCCESS] Processing completed successfully!
+[2025-10-10 14:56:24] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:56:24] [INFO] === Processing Complete ===
+[2025-10-10 14:56:24] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:56:25] [WARN] Creating Word template with VBA integration...
+[2025-10-10 14:56:25] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 14:56:25] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 14:56:25] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:56:25] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:56:25] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 14:56:25] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:57:37] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 14:57:37] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 14:57:37] [INFO] User: user
+[2025-10-10 14:57:37] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 14:57:37] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 14:57:37] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 14:57:37] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 14:57:38] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:57:38] [INFO] Project Number: H-025-999-25
+[2025-10-10 14:57:38] [INFO] Bridge ID: K160.0
+[2025-10-10 14:57:38] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:57:38] [SUCCESS] Starting Word document processing...
+[2025-10-10 14:57:40] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 14:57:41] [SUCCESS] Document opened successfully
+[2025-10-10 14:57:41] [WARN] Removing yellow highlights...
+[2025-10-10 14:57:42] [SUCCESS] Yellow highlights removed
+[2025-10-10 14:57:42] [WARN] Attempting database connection for mail merge...
+[2025-10-10 14:57:42] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 14:57:44] [SUCCESS] Database connection established successfully
+[2025-10-10 14:57:45] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 14:57:45] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 14:58:34] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 14:58:34] [SUCCESS] Mail merge completed successfully
+[2025-10-10 14:58:34] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 14:58:34] [SUCCESS] Merge field patterns highlighted
+[2025-10-10 14:58:34] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:58:34] [SUCCESS] Document saved successfully
+[2025-10-10 14:58:35] [SUCCESS] Processing completed successfully!
+[2025-10-10 14:58:35] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:58:35] [INFO] === Processing Complete ===
+[2025-10-10 14:58:35] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 14:58:35] [WARN] Creating Word template with VBA integration...
+[2025-10-10 14:58:35] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 14:58:35] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 14:58:35] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:58:36] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 14:58:36] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 14:58:36] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:21:48] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 15:21:48] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 15:21:48] [INFO] User: user
+[2025-10-10 15:21:48] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 15:21:48] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 15:21:48] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 15:21:48] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 15:21:48] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:21:48] [INFO] Project Number: H-025-999-25
+[2025-10-10 15:21:48] [INFO] Bridge ID: K160.0
+[2025-10-10 15:21:48] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:21:48] [SUCCESS] Starting Word document processing...
+[2025-10-10 15:21:50] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:21:52] [SUCCESS] Document opened successfully
+[2025-10-10 15:21:52] [WARN] Removing yellow highlights...
+[2025-10-10 15:21:52] [SUCCESS] Yellow highlights removed
+[2025-10-10 15:21:52] [WARN] Attempting database connection for mail merge...
+[2025-10-10 15:21:52] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 15:21:54] [SUCCESS] Database connection established successfully
+[2025-10-10 15:21:54] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 15:21:55] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 15:22:24] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 15:22:24] [SUCCESS] Mail merge completed successfully
+[2025-10-10 15:22:25] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 15:22:25] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 15:22:25] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:22:25] [SUCCESS] Document saved successfully
+[2025-10-10 15:22:27] [SUCCESS] Processing completed successfully!
+[2025-10-10 15:22:27] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:22:27] [INFO] === Processing Complete ===
+[2025-10-10 15:22:27] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:22:27] [WARN] Creating Word template with VBA integration...
+[2025-10-10 15:22:27] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 15:22:27] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 15:22:27] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:22:27] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:22:27] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 15:22:27] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:23:06] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 15:23:06] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 15:23:07] [INFO] User: user
+[2025-10-10 15:23:07] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 15:23:07] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 15:23:07] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 15:23:07] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 15:23:07] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:23:07] [INFO] Project Number: H-025-999-25
+[2025-10-10 15:23:07] [INFO] Bridge ID: K160.0
+[2025-10-10 15:23:07] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:23:07] [SUCCESS] Starting Word document processing...
+[2025-10-10 15:23:09] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:23:11] [SUCCESS] Document opened successfully
+[2025-10-10 15:23:11] [WARN] Removing yellow highlights...
+[2025-10-10 15:23:11] [SUCCESS] Yellow highlights removed
+[2025-10-10 15:23:11] [WARN] Attempting database connection for mail merge...
+[2025-10-10 15:23:11] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 15:23:13] [SUCCESS] Database connection established successfully
+[2025-10-10 15:23:13] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 15:23:13] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 15:23:14] [SUCCESS] Found matching template fields: hydraulic_modeling_tool, tool_version, tool_source, model_range_upstream, upstream_bridge_id, model_range_downstream, geospatial_tool, geospatial_software, elevation_model_detail, elevation_model_source, elevation_model_website, data_source_type, data_source_location, data_collection_year, manning_n_min, manning_n_max, flood_event_1, flood_event_2, flood_event_3, boundary_condition_type, slope_value, number_of_alternatives, alt1_structure_type, alt1_span_length, alt1_total_length, alt1_girder_depth, alt1_low_chord_elevation, alt1_length_comparison, alt2_structure_type, alt2_span_length, alt2_total_length, alt2_girder_depth, alt2_low_chord_elevation, alt2_length_comparison
+[2025-10-10 15:26:05] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 15:26:05] [SUCCESS] Mail merge completed successfully
+[2025-10-10 15:26:05] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 15:26:08] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 15:26:08] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:26:08] [SUCCESS] Document saved successfully
+[2025-10-10 15:26:10] [SUCCESS] Processing completed successfully!
+[2025-10-10 15:26:10] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:26:10] [INFO] === Processing Complete ===
+[2025-10-10 15:26:10] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:26:10] [WARN] Creating Word template with VBA integration...
+[2025-10-10 15:26:11] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 15:26:11] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 15:26:11] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:26:11] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:26:11] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 15:26:11] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:44:47] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 15:44:47] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 15:44:47] [INFO] User: user
+[2025-10-10 15:44:47] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 15:44:47] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 15:44:47] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 15:44:47] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 15:44:47] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:44:47] [INFO] Project Number: H-025-999-25
+[2025-10-10 15:44:47] [INFO] Bridge ID: K160.0
+[2025-10-10 15:44:47] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:44:47] [SUCCESS] Starting Word document processing...
+[2025-10-10 15:44:49] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:44:51] [SUCCESS] Document opened successfully
+[2025-10-10 15:44:51] [WARN] Removing yellow highlights...
+[2025-10-10 15:44:51] [SUCCESS] Yellow highlights removed
+[2025-10-10 15:44:51] [WARN] Attempting database connection for mail merge...
+[2025-10-10 15:44:51] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 15:44:53] [SUCCESS] Database connection established successfully
+[2025-10-10 15:44:53] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 15:44:53] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 15:44:53] [SUCCESS] Found matching template fields: hydraulic_modeling_tool, tool_version, tool_source, model_range_upstream, upstream_bridge_id, model_range_downstream, geospatial_tool, geospatial_software, elevation_model_detail, elevation_model_source, elevation_model_website, data_source_type, data_source_location, data_collection_year, manning_n_min, manning_n_max, flood_event_1, flood_event_2, flood_event_3, boundary_condition_type, slope_value, number_of_alternatives, alt1_structure_type, alt1_span_length, alt1_total_length, alt1_girder_depth, alt1_low_chord_elevation, alt1_length_comparison, alt2_structure_type, alt2_span_length, alt2_total_length, alt2_girder_depth, alt2_low_chord_elevation, alt2_length_comparison
+[2025-10-10 15:44:54] [WARN] âŒ Field not found: elevation_model_detail
+[2025-10-10 15:44:55] [WARN] âŒ Field not found: BridgeID
+[2025-10-10 15:44:55] [WARN] âŒ Field not found: alt1_guideline1_event
+[2025-10-10 15:44:56] [WARN] âŒ Field not found: alt5_side_slope
+[2025-10-10 15:44:56] [WARN] âŒ Field not found: scnoi_disturbed_area_max
+[2025-10-10 15:44:57] [WARN] âŒ Field not found: basin_area_square_miles
+[2025-10-10 15:44:57] [WARN] âŒ Field not found: geodetic_datum
+[2025-10-10 15:44:58] [WARN] âŒ Field not found: geospatial_tool
+[2025-10-10 15:44:58] [WARN] âŒ Field not found: discharge_ratio
+[2025-10-10 15:44:58] [WARN] âŒ Field not found: Alternate2BoxSpan
+[2025-10-10 15:44:59] [WARN] âŒ Field not found: guideline_source_2_specifications
+[2025-10-10 15:44:59] [WARN] âŒ Field not found: prepared_by_address_line1
+[2025-10-10 15:44:59] [WARN] âŒ Field not found: topography_upper
+[2025-10-10 15:44:59] [WARN] âŒ Field not found: alt3_embed_depth
+[2025-10-10 15:44:59] [WARN] âŒ Field not found: reference_2_source
+[2025-10-10 15:45:00] [WARN] âŒ Field not found: alt2_guideline2a_event
+[2025-10-10 15:45:00] [WARN] âŒ Field not found: existing_low_chord_elevation
+[2025-10-10 15:45:01] [WARN] âŒ Field not found: ExistingEstimatedChannelInvert
+[2025-10-10 15:45:01] [WARN] âŒ Field not found: alt2_guideline2a_wse
+[2025-10-10 15:45:01] [WARN] âŒ Field not found: reference_system
+[2025-10-10 15:45:02] [WARN] âŒ Field not found: alt3_alt4_alt5
+[2025-10-10 15:45:02] [WARN] âŒ Field not found: parent_railroad
+[2025-10-10 15:45:02] [WARN] âŒ Field not found: Division
+[2025-10-10 15:45:03] [WARN] âŒ Field not found: ExistingPilingSizeInches
+[2025-10-10 15:45:03] [WARN] âŒ Field not found: Alternate2SizeFeet
+[2025-10-10 15:45:04] [WARN] âŒ Field not found: alt5_culvert_size
+[2025-10-10 15:45:04] [WARN] âŒ Field not found: reference_3_report_number
+[2025-10-10 15:45:04] [WARN] âŒ Field not found: alt3_guideline1_elevation
+[2025-10-10 15:45:05] [WARN] âŒ Field not found: alt4_guideline3a_hwd
+[2025-10-10 15:45:05] [WARN] âŒ Field not found: lcnoi_disturbed_area
+[2025-10-10 15:45:05] [WARN] âŒ Field not found: lag_equation_source
+[2025-10-10 15:45:06] [WARN] âŒ Field not found: land_use
+[2025-10-10 15:45:06] [WARN] âŒ Field not found: prepared_by_email
+[2025-10-10 15:45:06] [WARN] âŒ Field not found: bridge_freeboard_feet
+[2025-10-10 15:45:07] [WARN] âŒ Field not found: CityStateLocation
+[2025-10-10 15:45:07] [WARN] âŒ Field not found: alt1_number
+[2025-10-10 15:45:08] [WARN] âŒ Field not found: alt5_invert_downstream
+[2025-10-10 15:45:08] [WARN] âŒ Field not found: reference_2_url
+[2025-10-10 15:45:09] [WARN] âŒ Field not found: reference_5_date
+[2025-10-10 15:45:09] [WARN] âŒ Field not found: structure_height
+[2025-10-10 15:45:09] [WARN] âŒ Field not found: alt1_guideline2a_difference
+[2025-10-10 15:45:10] [WARN] âŒ Field not found: alt4_number_of_culverts
+[2025-10-10 15:45:10] [WARN] âŒ Field not found: alt5_guideline1_elevation
+[2025-10-10 15:45:10] [WARN] âŒ Field not found: job_title
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: Latitude
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: foundation_type
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: guideline_source_1
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: alt3_invert_upstream
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: tbm2_elevation
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: guideline_source_3
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: Alternate1LengthFeet
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: distance_from_other_bridge
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: model_range_downstream
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: table_number
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: alt5_overall_length
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: reference_1_access_date
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: prepared_for_address_line1
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: Alternate1BoxRise
+[2025-10-10 15:45:11] [WARN] âŒ Field not found: cn_requirement_id
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: co_permit_1_number
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: alt3_culvert_length
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: reference_1_title
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: other_railroad_line
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: tbm3_station
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: reference_4_date
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: hydrology_source_1
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: land_use_lower_description
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: JobNumber
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: foundation_diameter_max
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: alt2_guideline1_elevation
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: PreferredGroundElevation
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: hydrology_state
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: boundary_condition_type
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: appendix_number
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: PreferredBoxSpan
+[2025-10-10 15:45:12] [WARN] âŒ Field not found: location_city
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: alt2_velocity_increase
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: Alternate1SizeFeet
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: alt2_guideline2a_exceeded_by
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: tbm3_elevation
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: consultant_company
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: reference_1_date
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: ExistingLengthFeet
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: alt5_culvert_length
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: alt2_low_chord_elevation
+[2025-10-10 15:45:13] [WARN] âŒ Field not found: prepared_for_name
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: page_number
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: alt1_guideline2a_event
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: culvert_design_flood_2
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: location_distance
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: co_permit_2_impact_limit_1
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: alt2_structure_type
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: tbm1_station
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: reference_3_source
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: number_of_benchmarks
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: hydrology_tool_1
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: rainfall_method
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: reference_1_url
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: headwater_distance
+[2025-10-10 15:45:14] [WARN] âŒ Field not found: alt1_guideline2b_difference
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: tbm2_station
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: velocity_increase_event
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: hydrology_source_2
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: basin_area_percentage_1
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: elevation_rail_east
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: consultant_address
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: ExistingNumberOfSpans
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: number_of_alternatives
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: curve_number_max
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: fema_designation
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: ExistingGroundElevation
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: ExistingSizeFeet
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: co_permit_2_impact_limit_2
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: reference_7_source
+[2025-10-10 15:45:15] [WARN] âŒ Field not found: alt5_guideline1_difference
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: company_footer
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: Alternate2StructureType
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: alt4_guideline1_event
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: prepared_for_zip
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: culvert_velocity_range_max
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: tbm3_offset
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: location_county
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: dvb_pressure_mode_events
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: geospatial_software
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: alt5_guideline3a_hwd
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: slope_value
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: location_road_interchange
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: alt2_length_comparison
+[2025-10-10 15:45:16] [WARN] âŒ Field not found: prepared_by_organization
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: alt2_number
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: bridge_freeboard_event
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: residential_development_level
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: alt4_invert_downstream
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: flood_event_1
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: co_permit_1_impact_limit
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: project_milepost
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: reference_5_url
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: reference_3_date
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: reference_6_date
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: prepared_by_phone
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: culvert_head_limit_2
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: ExistingHydraulicLengthMi
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: rainfall_data_source
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: prepared_by_name
+[2025-10-10 15:45:17] [WARN] âŒ Field not found: Alternate2NumberOfSpans
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: Subdivision
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: alt5_number_of_culverts
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: fema_zone
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: land_use_lower_fraction
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: abutment_type
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: alt4_guideline1_difference
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: alt1_span_details
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: alt4_guideline3a_event
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: prepared_for_city
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: elevation_relief
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: alt2_guideline2b_difference
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: PreferredPipeBoxLength
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: land_use_upper_fraction
+[2025-10-10 15:45:18] [WARN] âŒ Field not found: alt3_side_slope
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: prepared_by_zip
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: Alternate2LengthFeet
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: reference_2_edition
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: consultant_phone
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: hydrology_area
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: PreferredLengthFeet
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: curve_number_min
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: location
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: alt5_guideline1_event
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: section_heading
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: alt1_guideline1_difference
+[2025-10-10 15:45:19] [WARN] âŒ Field not found: rainfall_website
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: alt1_and_alt2
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: prepared_by_address_line2
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: watershed_tool_2
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: Alternate1BoxSpan
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: report_title
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: headwater_increase_limit_1
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: FINAL_DATE
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: Alternate2BoxRise
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: topography_lower
+[2025-10-10 15:45:20] [WARN] âŒ Field not found: parent_railroad_short_desc
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: PreferredLowChordElevation
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: alt1_guideline2b_wse
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: prepared_for_email
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: rfp_date
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: reference_2_title
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: culvert_design_flood_1
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: alt1_guideline2a_wse
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: alt1_girder_depth
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: railroad_subdivision
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: alt3_guideline1_event
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: alt4_guideline3b_event
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: watershed_tool_1
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: report_subtitle
+[2025-10-10 15:45:21] [WARN] âŒ Field not found: ExistingChordHeight
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: alt4_culvert_size
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: other_railroad_subdivision
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: reference_6_title
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: foundation_cap_type
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: culvert_height_limit
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: Alternate1StructureType
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: Alternate1PipeBoxLength
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: alt3_culvert_diameter
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: DRAFT_DATE
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: ExistingLowChordElevation
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: drainage_distance
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: alt1_guideline1_elevation
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: location_yard_name
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: railroad_line
+[2025-10-10 15:45:22] [WARN] âŒ Field not found: Longitude
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: prepared_by_title
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: tbm2_offset
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: alt4_overall_length
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: upstream_structure_length
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: alt3_guideline1_difference
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: tool_version
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: reference_5_source
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: culvert_velocity_range_min
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: prepared_for_state
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: alt1_velocity_increase
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: data_collection_year
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: protection_distance
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: ExistingDrainageAreaSqMi
+[2025-10-10 15:45:23] [WARN] âŒ Field not found: co_permit_1_name
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: culvert_velocity_difference
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: alt2_guideline2b_wse
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: prepared_for_title
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: flood_event_2
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: railroad_division
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: alt1_span_length
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: alt1_length_comparison
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: alt2_total_length
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: firm_effective_date
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: alt2_guideline1_difference
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: foundation_diameter_min
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: culvert_head_limit_1
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: Date
+[2025-10-10 15:45:24] [WARN] âŒ Field not found: alt5_embed_depth
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: minimum_cover_requirement
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: manning_n_min
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: alt2_girder_depth
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: alt3_guideline3a_hwd
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: alt4_embed_depth
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: elevation_rail_west
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: headwater_increase_event
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: elevation_model_source
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: alt4_invert_upstream
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: tool_source
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: bridge_design_flood_event
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: alt4_culvert_length
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: model_range_upstream
+[2025-10-10 15:45:25] [WARN] âŒ Field not found: hydrology_manual
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: alt4_side_slope
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: prepared_by_city
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: alt1_guideline2b_event
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: alt1_guideline2a_exceeded_by
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: Alternate2PipeDiameter
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: alt2_guideline2a_difference
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: hydraulic_modeling_tool
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: reference_6_source
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: culvert_velocity_event
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: PreferredSizeFeet
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: reference_4_url
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: prepared_for_phone
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: alt2_span_length
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: reference_5_version
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: firm_panel_number
+[2025-10-10 15:45:26] [WARN] âŒ Field not found: PreferredNumberOfSpans
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: tbm1_elevation
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: drainage_name
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: manning_n_max
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: hydrology_tool_2
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: alt1_total_length
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: alt2_span_details
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: ExistingStructureType
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: reference_3_title
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: data_source_type
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: Alternate1NumberOfSpans
+[2025-10-10 15:45:27] [WARN] âŒ Field not found: fema_document_name
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: alt5_guideline3b_hwd
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: bridge_footer
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: tbm1_offset
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: reference_5_title
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: alt2_guideline1_event
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: reference_4_source
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: alt3_overall_length
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: other_bridge_id
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: headwater_location
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: ExistingCurveNumber
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: reference_1_source
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: routing_method
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: alt5_guideline3b_event
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: prepared_by_state
+[2025-10-10 15:45:28] [WARN] âŒ Field not found: alt4_guideline1_elevation
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: alt3_number_of_culverts
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: elevation_low_ground
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: base_of_rail_elevation
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: alt4_guideline3b_hwd
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: fema_agency
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: alt3_guideline3b_event
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: ExistingAverageSlopePercent
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: routing_model
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: figure_number
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: Alternate2PipeBoxLength
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: alt1_structure_type
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: prepared_for_address_line2
+[2025-10-10 15:45:29] [WARN] âŒ Field not found: alt1_low_chord_elevation
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: location_state
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: data_source_location
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: alt3_guideline3a_event
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: alt3_invert_downstream
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: PreferredPipeDiameter
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: alt5_guideline3a_event
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: reference_7_title
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: PreferredStructureType
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: existing_headwater_elevation
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: Alternate1PipeDiameter
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: directional
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: PreferredBoxRise
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: flood_event_3
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: abutment_slope
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: parent_railroad_abbr
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: reference_7_date
+[2025-10-10 15:45:30] [WARN] âŒ Field not found: guideline_source_2
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: alt2_guideline2b_event
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: upstream_bridge_id
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: dvh_low_chord_difference
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: ExistingTopOfRail
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: project_number
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: alt3_guideline3b_hwd
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: reference_4_title
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: scnoi_disturbed_area_min
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: alt4_alt5_embed_depth
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: reference_4_version
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: protection_type
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: fema_description
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: cmp_top_elevation
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: prepared_for_organization
+[2025-10-10 15:45:31] [WARN] âŒ Field not found: elevation_model_website
+[2025-10-10 15:45:32] [WARN] âŒ Field not found: bridge_id
+[2025-10-10 15:45:32] [WARN] âŒ Field not found: upstream_structure_type
+[2025-10-10 15:45:32] [WARN] âŒ Field not found: alt5_invert_upstream
+[2025-10-10 15:45:32] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 15:45:32] [SUCCESS] Mail merge completed successfully
+[2025-10-10 15:45:32] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 15:45:32] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 15:45:32] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:45:33] [SUCCESS] Document saved successfully
+[2025-10-10 15:45:34] [SUCCESS] Processing completed successfully!
+[2025-10-10 15:45:34] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:45:34] [INFO] === Processing Complete ===
+[2025-10-10 15:45:34] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:45:34] [WARN] Creating Word template with VBA integration...
+[2025-10-10 15:45:34] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 15:45:34] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 15:45:34] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:45:34] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:45:34] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 15:45:34] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:46:46] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 15:46:46] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 15:46:46] [INFO] User: user
+[2025-10-10 15:46:46] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 15:46:46] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 15:46:46] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 15:46:46] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 15:46:46] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:46:46] [INFO] Project Number: H-025-999-25
+[2025-10-10 15:46:46] [INFO] Bridge ID: K160.0
+[2025-10-10 15:46:46] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:46:46] [SUCCESS] Starting Word document processing...
+[2025-10-10 15:46:47] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:46:48] [SUCCESS] Document opened successfully
+[2025-10-10 15:46:48] [WARN] Removing yellow highlights...
+[2025-10-10 15:46:49] [SUCCESS] Yellow highlights removed
+[2025-10-10 15:46:49] [WARN] Attempting database connection for mail merge...
+[2025-10-10 15:46:49] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 15:46:50] [SUCCESS] Database connection established successfully
+[2025-10-10 15:46:51] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 15:46:51] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 15:46:51] [WARN] Scanning document for merge fields...
+[2025-10-10 15:46:51] [INFO] Found 0 unique merge fields in document:
+[2025-10-10 15:46:51] [INFO] Document fields: ...
+[2025-10-10 15:46:51] [WARN] No exact matches found between document fields and database fields
+[2025-10-10 15:46:51] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 15:46:51] [SUCCESS] Mail merge completed successfully
+[2025-10-10 15:46:51] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 15:46:51] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 15:46:51] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:46:52] [SUCCESS] Document saved successfully
+[2025-10-10 15:46:56] [SUCCESS] Processing completed successfully!
+[2025-10-10 15:46:56] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:46:56] [INFO] === Processing Complete ===
+[2025-10-10 15:46:56] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:46:56] [WARN] Creating Word template with VBA integration...
+[2025-10-10 15:46:56] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 15:46:56] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 15:46:56] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:46:56] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:46:56] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 15:46:56] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:47:29] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 15:47:29] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 15:47:29] [INFO] User: user
+[2025-10-10 15:47:29] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 15:47:29] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 15:47:29] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 15:47:29] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 15:47:29] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:47:29] [INFO] Project Number: H-025-999-25
+[2025-10-10 15:47:29] [INFO] Bridge ID: K160.0
+[2025-10-10 15:47:29] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:47:29] [SUCCESS] Starting Word document processing...
+[2025-10-10 15:47:31] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:47:33] [SUCCESS] Document opened successfully
+[2025-10-10 15:47:33] [WARN] Removing yellow highlights...
+[2025-10-10 15:47:33] [SUCCESS] Yellow highlights removed
+[2025-10-10 15:47:33] [WARN] Attempting database connection for mail merge...
+[2025-10-10 15:47:33] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 15:47:34] [SUCCESS] Database connection established successfully
+[2025-10-10 15:47:35] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 15:47:35] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 15:47:35] [WARN] Scanning document for merge fields...
+[2025-10-10 15:47:35] [INFO] Document text sample (first 500 chars): /Hydrologic and Hydraulic EvaluationBRIDGE K160.0near RichlandMendrop, AlbeeGulf DivisionBeaumont SubdivisionDraft Report Date: Sep 04, 2025Final Report Date: Jan 01, 1900Prepared for:MendropMendrop, Albee126 4th Ave NE, 702AlbeeMendrop, Florida, 33701jeff.albee@gmail.comPrepared by:/854 Wilson Drive, Suite ARidgeland, MS 39158(601) 899-5158MER PROJECT NO.: H-025-999-25Table of Contents1.0	INTRODUCTION	11.1	Purpose of Study	11.2	FEMA Considerations	11.3	Project C
+[2025-10-10 15:47:35] [INFO] Found 0 unique merge fields in document:
+[2025-10-10 15:47:35] [INFO] Document fields: ...
+[2025-10-10 15:47:35] [WARN] No exact matches found between document fields and database fields
+[2025-10-10 15:47:35] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 15:47:35] [SUCCESS] Mail merge completed successfully
+[2025-10-10 15:47:35] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 15:47:35] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 15:47:35] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:47:36] [SUCCESS] Document saved successfully
+[2025-10-10 15:47:38] [SUCCESS] Processing completed successfully!
+[2025-10-10 15:47:38] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:47:38] [INFO] === Processing Complete ===
+[2025-10-10 15:47:38] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:47:38] [WARN] Creating Word template with VBA integration...
+[2025-10-10 15:47:38] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 15:47:38] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 15:47:38] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:47:38] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:47:38] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 15:47:38] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:49:21] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 15:49:21] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 15:49:21] [INFO] User: user
+[2025-10-10 15:49:21] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 15:49:21] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 15:49:21] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 15:49:21] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 15:49:21] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:49:21] [INFO] Project Number: H-025-999-25
+[2025-10-10 15:49:21] [INFO] Bridge ID: K160.0
+[2025-10-10 15:49:21] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:49:21] [SUCCESS] Starting Word document processing...
+[2025-10-10 15:49:23] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 15:49:24] [SUCCESS] Document opened successfully
+[2025-10-10 15:49:24] [WARN] Removing yellow highlights...
+[2025-10-10 15:49:25] [SUCCESS] Yellow highlights removed
+[2025-10-10 15:49:25] [WARN] Attempting database connection for mail merge...
+[2025-10-10 15:49:25] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 15:49:27] [SUCCESS] Database connection established successfully
+[2025-10-10 15:49:28] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 15:49:28] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 15:49:28] [WARN] Using direct field replacement approach...
+[2025-10-10 15:49:28] [SUCCESS] Found 34 common template fields with database matches
+[2025-10-10 15:49:28] [WARN] âŒ Field not found: hydraulic_modeling_tool
+[2025-10-10 15:49:28] [WARN] âŒ Field not found: tool_version
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: tool_source
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: model_range_upstream
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: upstream_bridge_id
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: model_range_downstream
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: geospatial_tool
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: geospatial_software
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: elevation_model_detail
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: elevation_model_source
+[2025-10-10 15:49:29] [WARN] âŒ Field not found: elevation_model_website
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: data_source_type
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: data_source_location
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: data_collection_year
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: manning_n_min
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: manning_n_max
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: flood_event_1
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: flood_event_2
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: flood_event_3
+[2025-10-10 15:49:30] [WARN] âŒ Field not found: boundary_condition_type
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: slope_value
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: number_of_alternatives
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt1_structure_type
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt1_span_length
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt1_total_length
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt1_girder_depth
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt1_low_chord_elevation
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt1_length_comparison
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt2_structure_type
+[2025-10-10 15:49:31] [WARN] âŒ Field not found: alt2_span_length
+[2025-10-10 15:49:32] [WARN] âŒ Field not found: alt2_total_length
+[2025-10-10 15:49:32] [WARN] âŒ Field not found: alt2_girder_depth
+[2025-10-10 15:49:32] [WARN] âŒ Field not found: alt2_low_chord_elevation
+[2025-10-10 15:49:32] [WARN] âŒ Field not found: alt2_length_comparison
+[2025-10-10 15:49:32] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 15:49:32] [SUCCESS] Mail merge completed successfully
+[2025-10-10 15:49:32] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 15:49:32] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 15:49:32] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:49:32] [SUCCESS] Document saved successfully
+[2025-10-10 15:49:35] [SUCCESS] Processing completed successfully!
+[2025-10-10 15:49:35] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:49:35] [INFO] === Processing Complete ===
+[2025-10-10 15:49:35] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 15:49:35] [WARN] Creating Word template with VBA integration...
+[2025-10-10 15:49:35] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 15:49:35] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 15:49:35] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:49:35] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 15:49:35] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 15:49:35] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:01:10] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 16:01:10] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 16:01:10] [INFO] User: user
+[2025-10-10 16:01:11] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 16:01:11] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 16:01:11] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 16:01:11] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 16:01:11] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:01:11] [INFO] Project Number: H-025-999-25
+[2025-10-10 16:01:11] [INFO] Bridge ID: K160.0
+[2025-10-10 16:01:11] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:01:11] [SUCCESS] Starting Word document processing...
+[2025-10-10 16:01:13] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:01:14] [SUCCESS] Document opened successfully
+[2025-10-10 16:01:14] [WARN] Removing yellow highlights...
+[2025-10-10 16:01:14] [SUCCESS] Yellow highlights removed
+[2025-10-10 16:01:14] [WARN] Attempting database connection for mail merge...
+[2025-10-10 16:01:14] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 16:01:16] [SUCCESS] Database connection established successfully
+[2025-10-10 16:01:16] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 16:01:16] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 16:01:16] [WARN] Checking template content...
+[2025-10-10 16:01:17] [INFO] Saved template content to C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\template_content.txt for analysis
+[2025-10-10 16:01:17] [SUCCESS] Found 34 common template fields with database matches
+[2025-10-10 16:01:17] [WARN] The database has the data, but the template might not have the expected merge field format
+[2025-10-10 16:01:30] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 16:01:30] [SUCCESS] Mail merge completed successfully
+[2025-10-10 16:01:30] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 16:01:30] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 16:01:30] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:01:31] [SUCCESS] Document saved successfully
+[2025-10-10 16:01:33] [SUCCESS] Processing completed successfully!
+[2025-10-10 16:01:33] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:01:33] [INFO] === Processing Complete ===
+[2025-10-10 16:01:33] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:01:33] [WARN] Creating Word template with VBA integration...
+[2025-10-10 16:01:33] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 16:01:33] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 16:01:33] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 16:01:33] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 16:01:34] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 16:01:34] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:04:19] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 16:04:19] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 16:04:19] [INFO] User: user
+[2025-10-10 16:04:19] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 16:04:20] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 16:04:20] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 16:04:20] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 16:04:20] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:04:20] [INFO] Project Number: H-025-999-25
+[2025-10-10 16:04:20] [INFO] Bridge ID: K160.0
+[2025-10-10 16:04:20] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:04:20] [SUCCESS] Starting Word document processing...
+[2025-10-10 16:04:23] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:04:24] [SUCCESS] Document opened successfully
+[2025-10-10 16:04:24] [WARN] Removing yellow highlights...
+[2025-10-10 16:04:24] [SUCCESS] Yellow highlights removed
+[2025-10-10 16:04:24] [WARN] Attempting database connection for mail merge...
+[2025-10-10 16:04:24] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 16:04:26] [SUCCESS] Database connection established successfully
+[2025-10-10 16:04:27] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 16:04:27] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 16:04:27] [WARN] Checking template content...
+[2025-10-10 16:04:27] [INFO] Saved template content to C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\template_content.txt for analysis
+[2025-10-10 16:04:27] [SUCCESS] Found 34 common template fields with database matches
+[2025-10-10 16:04:27] [WARN] The database has the data, but the template might not have the expected merge field format
+[2025-10-10 16:33:33] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 16:33:33] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 16:33:33] [INFO] User: user
+[2025-10-10 16:33:33] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 16:33:33] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 16:33:34] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 16:33:34] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 16:33:34] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:33:34] [INFO] Project Number: H-025-999-25
+[2025-10-10 16:33:34] [INFO] Bridge ID: K160.0
+[2025-10-10 16:33:34] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:33:34] [SUCCESS] Starting Word document processing...
+[2025-10-10 16:33:38] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:34:04] [SUCCESS] Document opened successfully
+[2025-10-10 16:34:05] [WARN] Removing yellow highlights...
+[2025-10-10 16:34:06] [SUCCESS] Yellow highlights removed
+[2025-10-10 16:34:06] [WARN] Attempting database connection for mail merge...
+[2025-10-10 16:34:06] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 16:34:08] [SUCCESS] Database connection established successfully
+[2025-10-10 16:34:09] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 16:34:09] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 16:34:09] [WARN] Using direct field replacement approach...
+[2025-10-10 16:34:09] [SUCCESS] Found 34 common template fields with database matches
+[2025-10-10 16:34:10] [WARN] âŒ Field not found: hydraulic_modeling_tool
+[2025-10-10 16:34:10] [WARN] âŒ Field not found: tool_version
+[2025-10-10 16:34:10] [WARN] âŒ Field not found: tool_source
+[2025-10-10 16:34:11] [WARN] âŒ Field not found: model_range_upstream
+[2025-10-10 16:34:11] [WARN] âŒ Field not found: upstream_bridge_id
+[2025-10-10 16:34:11] [WARN] âŒ Field not found: model_range_downstream
+[2025-10-10 16:34:12] [WARN] âŒ Field not found: geospatial_tool
+[2025-10-10 16:34:12] [WARN] âŒ Field not found: geospatial_software
+[2025-10-10 16:34:12] [WARN] âŒ Field not found: elevation_model_detail
+[2025-10-10 16:34:12] [WARN] âŒ Field not found: elevation_model_source
+[2025-10-10 16:34:12] [WARN] âŒ Field not found: elevation_model_website
+[2025-10-10 16:34:13] [WARN] âŒ Field not found: data_source_type
+[2025-10-10 16:34:14] [WARN] âŒ Field not found: data_source_location
+[2025-10-10 16:34:14] [WARN] âŒ Field not found: data_collection_year
+[2025-10-10 16:34:14] [WARN] âŒ Field not found: manning_n_min
+[2025-10-10 16:34:15] [WARN] âŒ Field not found: manning_n_max
+[2025-10-10 16:34:15] [WARN] âŒ Field not found: flood_event_1
+[2025-10-10 16:34:15] [WARN] âŒ Field not found: flood_event_2
+[2025-10-10 16:34:15] [WARN] âŒ Field not found: flood_event_3
+[2025-10-10 16:34:16] [WARN] âŒ Field not found: boundary_condition_type
+[2025-10-10 16:34:16] [WARN] âŒ Field not found: slope_value
+[2025-10-10 16:34:16] [WARN] âŒ Field not found: number_of_alternatives
+[2025-10-10 16:34:16] [WARN] âŒ Field not found: alt1_structure_type
+[2025-10-10 16:34:16] [WARN] âŒ Field not found: alt1_span_length
+[2025-10-10 16:34:16] [WARN] âŒ Field not found: alt1_total_length
+[2025-10-10 16:34:16] [WARN] âŒ Field not found: alt1_girder_depth
+[2025-10-10 16:34:17] [WARN] âŒ Field not found: alt1_low_chord_elevation
+[2025-10-10 16:34:17] [WARN] âŒ Field not found: alt1_length_comparison
+[2025-10-10 16:34:17] [WARN] âŒ Field not found: alt2_structure_type
+[2025-10-10 16:34:17] [WARN] âŒ Field not found: alt2_span_length
+[2025-10-10 16:34:17] [WARN] âŒ Field not found: alt2_total_length
+[2025-10-10 16:34:17] [WARN] âŒ Field not found: alt2_girder_depth
+[2025-10-10 16:34:18] [WARN] âŒ Field not found: alt2_low_chord_elevation
+[2025-10-10 16:34:18] [WARN] âŒ Field not found: alt2_length_comparison
+[2025-10-10 16:34:19] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 16:34:20] [SUCCESS] Mail merge completed successfully
+[2025-10-10 16:34:20] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 16:34:21] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 16:34:21] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:34:22] [SUCCESS] Document saved successfully
+[2025-10-10 16:34:24] [SUCCESS] Processing completed successfully!
+[2025-10-10 16:34:24] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:34:24] [INFO] === Processing Complete ===
+[2025-10-10 16:34:24] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:34:24] [WARN] Creating Word template with VBA integration...
+[2025-10-10 16:34:24] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 16:34:24] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 16:34:24] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 16:34:24] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 16:34:24] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 16:34:24] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:36:03] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 16:36:03] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 16:36:03] [INFO] User: user
+[2025-10-10 16:36:03] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 16:36:03] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 16:36:03] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 16:36:03] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 16:36:03] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:36:03] [INFO] Project Number: H-025-999-25
+[2025-10-10 16:36:03] [INFO] Bridge ID: K160.0
+[2025-10-10 16:36:03] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:36:03] [SUCCESS] Starting Word document processing...
+[2025-10-10 16:36:05] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:40:21] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 16:40:21] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 16:40:21] [INFO] User: user
+[2025-10-10 16:40:21] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 16:40:21] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 16:40:21] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 16:40:21] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 16:40:21] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:40:21] [INFO] Project Number: H-025-999-25
+[2025-10-10 16:40:21] [INFO] Bridge ID: K160.0
+[2025-10-10 16:40:21] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:40:22] [SUCCESS] Starting Word document processing...
+[2025-10-10 16:40:24] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:55:40] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 16:55:40] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 16:55:40] [INFO] User: user
+[2025-10-10 16:55:40] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 16:55:40] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 16:55:40] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 16:55:40] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 16:55:40] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:55:40] [INFO] Project Number: H-025-999-25
+[2025-10-10 16:55:40] [INFO] Bridge ID: K160.0
+[2025-10-10 16:55:40] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:55:40] [SUCCESS] Starting Word document processing...
+[2025-10-10 16:55:43] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:57:21] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 16:57:21] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 16:57:21] [INFO] User: user
+[2025-10-10 16:57:21] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 16:57:21] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 16:57:21] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 16:57:22] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 16:57:22] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 16:57:22] [INFO] Project Number: H-025-999-25
+[2025-10-10 16:57:22] [INFO] Bridge ID: K160.0
+[2025-10-10 16:57:22] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 16:57:22] [SUCCESS] Starting Word document processing...
+[2025-10-10 16:57:24] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:03:15] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:03:15] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:03:15] [INFO] User: user
+[2025-10-10 17:03:15] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:03:15] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:03:15] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:03:15] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:03:15] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:03:15] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:03:15] [INFO] Bridge ID: K160.0
+[2025-10-10 17:03:15] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:03:15] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:03:18] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:03:49] [SUCCESS] Document opened successfully
+[2025-10-10 17:03:50] [WARN] Removing yellow highlights...
+[2025-10-10 17:03:51] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:03:51] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:03:51] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:03:53] [SUCCESS] Database connection established successfully
+[2025-10-10 17:03:54] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 17:03:54] [INFO] Sample field names: elevation_model_detail, BridgeID, alt1_guideline1_event, alt5_side_slope, scnoi_disturbed_area_max, basin_area_square_miles, geodetic_datum, geospatial_tool, discharge_ratio, Alternate2BoxSpan
+[2025-10-10 17:03:54] [WARN] Using direct field replacement approach...
+[2025-10-10 17:03:54] [SUCCESS] Found 34 common template fields with database matches
+[2025-10-10 17:03:54] [WARN] âŒ Field not found: hydraulic_modeling_tool
+[2025-10-10 17:03:54] [WARN] âŒ Field not found: tool_version
+[2025-10-10 17:03:55] [WARN] âŒ Field not found: tool_source
+[2025-10-10 17:03:55] [WARN] âŒ Field not found: model_range_upstream
+[2025-10-10 17:03:55] [WARN] âŒ Field not found: upstream_bridge_id
+[2025-10-10 17:03:56] [WARN] âŒ Field not found: model_range_downstream
+[2025-10-10 17:03:56] [WARN] âŒ Field not found: geospatial_tool
+[2025-10-10 17:03:56] [WARN] âŒ Field not found: geospatial_software
+[2025-10-10 17:03:56] [WARN] âŒ Field not found: elevation_model_detail
+[2025-10-10 17:03:57] [WARN] âŒ Field not found: elevation_model_source
+[2025-10-10 17:03:57] [WARN] âŒ Field not found: elevation_model_website
+[2025-10-10 17:03:57] [WARN] âŒ Field not found: data_source_type
+[2025-10-10 17:03:58] [WARN] âŒ Field not found: data_source_location
+[2025-10-10 17:03:58] [WARN] âŒ Field not found: data_collection_year
+[2025-10-10 17:03:58] [WARN] âŒ Field not found: manning_n_min
+[2025-10-10 17:03:59] [WARN] âŒ Field not found: manning_n_max
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'flood_event_1': You cannot call a method on a null-valued expression.
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'flood_event_2': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'flood_event_3': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'boundary_condition_type': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'slope_value': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'number_of_alternatives': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'alt1_structure_type': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'alt1_span_length': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'alt1_total_length': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'alt1_girder_depth': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'alt1_low_chord_elevation': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:01] [WARN] Warning: Could not replace field 'alt1_length_comparison': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [WARN] Warning: Could not replace field 'alt2_structure_type': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [WARN] Warning: Could not replace field 'alt2_span_length': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [WARN] Warning: Could not replace field 'alt2_total_length': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [WARN] Warning: Could not replace field 'alt2_girder_depth': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [WARN] Warning: Could not replace field 'alt2_low_chord_elevation': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [WARN] Warning: Could not replace field 'alt2_length_comparison': The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [SUCCESS] Successfully replaced 0 merge fields
+[2025-10-10 17:04:02] [SUCCESS] Mail merge completed successfully
+[2025-10-10 17:04:02] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:04:02] [ERROR] Error occurred: The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [ERROR] Script failed: The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [ERROR] Stack trace: at Process-WordDocument, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 455
+at <ScriptBlock>, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 731
+at <ScriptBlock>, <No file>: line 1
+[2025-10-10 17:04:02] [ERROR] === SESSION FAILED ===
+[2025-10-10 17:04:02] [ERROR] Error: The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)
+[2025-10-10 17:04:02] [ERROR] Stack trace: at Process-WordDocument, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 455
+at <ScriptBlock>, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 731
+at <ScriptBlock>, <No file>: line 1
+[2025-10-10 17:04:46] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:04:46] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:04:46] [INFO] User: user
+[2025-10-10 17:04:46] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:04:46] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:04:46] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:04:46] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:04:46] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:04:46] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:04:46] [INFO] Bridge ID: K160.0
+[2025-10-10 17:04:46] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:04:46] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:04:49] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:05:15] [SUCCESS] Document opened successfully
+[2025-10-10 17:05:15] [WARN] Removing yellow highlights...
+[2025-10-10 17:05:15] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:05:15] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:05:15] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:05:17] [SUCCESS] Database connection established successfully
+[2025-10-10 17:05:17] [SUCCESS] Retrieved 342 fields from database
+[2025-10-10 17:05:19] [ERROR] Error during mail merge: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+[2025-10-10 17:05:19] [WARN] Database connection failed - preserving template content
+[2025-10-10 17:05:19] [ERROR] Error: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+[2025-10-10 17:05:19] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 17:05:19] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 17:05:19] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:05:19] [SUCCESS] Merge field patterns highlighted
+[2025-10-10 17:05:19] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:05:20] [SUCCESS] Document saved successfully
+[2025-10-10 17:05:22] [SUCCESS] Processing completed successfully!
+[2025-10-10 17:05:22] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:05:22] [INFO] === Processing Complete ===
+[2025-10-10 17:05:22] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:05:22] [WARN] Creating Word template with VBA integration...
+[2025-10-10 17:05:22] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 17:05:22] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 17:05:22] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:05:22] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:05:22] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 17:05:22] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:06:34] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:06:34] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:06:34] [INFO] User: user
+[2025-10-10 17:06:34] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:06:34] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:06:34] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:06:34] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:06:34] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:06:34] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:06:34] [INFO] Bridge ID: K160.0
+[2025-10-10 17:06:34] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:06:34] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:06:36] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:07:05] [ERROR] Error occurred: Command failed
+[2025-10-10 17:07:05] [ERROR] Script failed: Command failed
+[2025-10-10 17:07:05] [ERROR] Stack trace: at Process-WordDocument, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 410
+at <ScriptBlock>, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 731
+at <ScriptBlock>, <No file>: line 1
+[2025-10-10 17:07:05] [ERROR] === SESSION FAILED ===
+[2025-10-10 17:07:05] [ERROR] Error: Command failed
+[2025-10-10 17:07:05] [ERROR] Stack trace: at Process-WordDocument, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 410
+at <ScriptBlock>, C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_marco_dotm.ps1: line 731
+at <ScriptBlock>, <No file>: line 1
+[2025-10-10 17:19:25] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:19:25] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:19:25] [INFO] User: user
+[2025-10-10 17:19:25] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:19:25] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:19:25] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:19:26] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:19:26] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:19:26] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:19:26] [INFO] Bridge ID: K160.0
+[2025-10-10 17:19:26] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:19:26] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:19:31] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:19:33] [SUCCESS] Document opened successfully
+[2025-10-10 17:19:33] [WARN] Removing yellow highlights...
+[2025-10-10 17:19:35] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:19:35] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:19:35] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:19:41] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '105.113.96.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:19:41] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '105.113.96.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:19:41] [WARN] Database connection failed - preserving template content
+[2025-10-10 17:19:41] [ERROR] Error: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '105.113.96.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:19:42] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 17:19:42] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 17:19:42] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:19:42] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 17:19:42] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:19:43] [SUCCESS] Document saved successfully
+[2025-10-10 17:19:52] [SUCCESS] Processing completed successfully!
+[2025-10-10 17:19:52] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:19:52] [INFO] === Processing Complete ===
+[2025-10-10 17:19:52] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:19:52] [WARN] Creating Word template with VBA integration...
+[2025-10-10 17:19:53] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 17:19:53] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 17:19:53] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:19:53] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:19:53] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 17:19:53] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:23:30] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:23:30] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:23:30] [INFO] User: user
+[2025-10-10 17:23:30] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:23:30] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:23:30] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:23:30] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:23:30] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:23:30] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:23:30] [INFO] Bridge ID: K160.0
+[2025-10-10 17:23:31] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:23:31] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:23:33] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:23:35] [SUCCESS] Document opened successfully
+[2025-10-10 17:23:35] [WARN] Removing yellow highlights...
+[2025-10-10 17:23:35] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:23:35] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:23:35] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:23:36] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '105.113.96.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:23:36] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '105.113.96.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:23:37] [WARN] Database connection failed - preserving template content
+[2025-10-10 17:23:37] [ERROR] Error: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '105.113.96.46' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:23:37] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 17:23:37] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 17:23:37] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:23:37] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 17:23:37] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:23:38] [SUCCESS] Document saved successfully
+[2025-10-10 17:23:41] [SUCCESS] Processing completed successfully!
+[2025-10-10 17:23:41] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:23:41] [INFO] === Processing Complete ===
+[2025-10-10 17:23:41] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:23:41] [WARN] Creating Word template with VBA integration...
+[2025-10-10 17:23:41] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 17:23:41] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 17:23:41] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:23:41] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:23:41] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 17:23:41] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:33:57] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:33:57] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:33:57] [INFO] User: user
+[2025-10-10 17:33:57] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:33:57] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:33:57] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:33:57] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:33:57] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:33:57] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:33:57] [INFO] Bridge ID: K160.0
+[2025-10-10 17:33:57] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:33:57] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:34:00] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:34:02] [SUCCESS] Document opened successfully
+[2025-10-10 17:34:02] [WARN] Removing yellow highlights...
+[2025-10-10 17:34:02] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:34:02] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:34:02] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:34:18] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: The wait operation timed out.
+
+[2025-10-10 17:34:18] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: The wait operation timed out.
+
+[2025-10-10 17:34:18] [WARN] Database connection failed - preserving template content
+[2025-10-10 17:34:18] [ERROR] Error: [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: The wait operation timed out.
+
+[2025-10-10 17:34:18] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 17:34:18] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 17:34:18] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:34:18] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 17:34:18] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:34:18] [SUCCESS] Document saved successfully
+[2025-10-10 17:34:24] [SUCCESS] Processing completed successfully!
+[2025-10-10 17:34:24] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:34:24] [INFO] === Processing Complete ===
+[2025-10-10 17:34:24] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:34:25] [WARN] Creating Word template with VBA integration...
+[2025-10-10 17:34:25] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 17:34:25] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 17:34:25] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:34:25] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:34:25] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 17:34:25] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:36:20] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:36:20] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:36:20] [INFO] User: user
+[2025-10-10 17:36:20] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:36:20] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:36:20] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:36:20] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:36:20] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:36:20] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:36:20] [INFO] Bridge ID: K160.0
+[2025-10-10 17:36:20] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:36:20] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:36:22] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:36:23] [SUCCESS] Document opened successfully
+[2025-10-10 17:36:23] [WARN] Removing yellow highlights...
+[2025-10-10 17:36:23] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:36:23] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:36:23] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:36:25] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:36:25] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:36:25] [WARN] Database connection failed - preserving template content
+[2025-10-10 17:36:25] [ERROR] Error: [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:36:25] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 17:36:25] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 17:36:25] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:36:25] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 17:36:25] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:36:25] [SUCCESS] Document saved successfully
+[2025-10-10 17:36:28] [SUCCESS] Processing completed successfully!
+[2025-10-10 17:36:28] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:36:28] [INFO] === Processing Complete ===
+[2025-10-10 17:36:28] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:36:28] [WARN] Creating Word template with VBA integration...
+[2025-10-10 17:36:28] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 17:36:28] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 17:36:28] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:36:28] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:36:28] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 17:36:28] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:38:19] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:38:19] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:38:20] [INFO] User: user
+[2025-10-10 17:38:20] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:38:20] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:38:20] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:38:20] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:38:20] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:38:20] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:38:20] [INFO] Bridge ID: K160.0
+[2025-10-10 17:38:20] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:38:20] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:38:22] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:38:23] [SUCCESS] Document opened successfully
+[2025-10-10 17:38:23] [WARN] Removing yellow highlights...
+[2025-10-10 17:38:23] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:38:23] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:38:23] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:38:26] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:38:26] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:38:26] [WARN] Database connection failed - preserving template content
+[2025-10-10 17:38:26] [ERROR] Error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:38:26] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 17:38:26] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 17:38:26] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:38:26] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 17:38:26] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:38:26] [SUCCESS] Document saved successfully
+[2025-10-10 17:38:29] [SUCCESS] Processing completed successfully!
+[2025-10-10 17:38:29] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:38:29] [INFO] === Processing Complete ===
+[2025-10-10 17:38:29] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:38:29] [WARN] Creating Word template with VBA integration...
+[2025-10-10 17:38:29] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 17:38:29] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 17:38:29] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:38:29] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:38:29] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 17:38:29] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:42:00] [INFO] === NEW SESSION STARTED ===
+[2025-10-10 17:42:00] [INFO] Script: word_marco_dotm.ps1
+[2025-10-10 17:42:00] [INFO] User: user
+[2025-10-10 17:42:00] [INFO] Computer: MICHAELMICAH03
+[2025-10-10 17:42:01] [INFO] Working Directory: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database
+[2025-10-10 17:42:01] [INFO] Log File: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\word_processor_log.txt
+[2025-10-10 17:42:01] [INFO] === Word Document Processor with Database Integration ===
+[2025-10-10 17:42:01] [INFO] Input Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:42:01] [INFO] Project Number: H-025-999-25
+[2025-10-10 17:42:01] [INFO] Bridge ID: K160.0
+[2025-10-10 17:42:01] [INFO] Output Path: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:42:01] [SUCCESS] Starting Word document processing...
+[2025-10-10 17:42:04] [WARN] Opening document: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm
+[2025-10-10 17:42:05] [SUCCESS] Document opened successfully
+[2025-10-10 17:42:05] [WARN] Removing yellow highlights...
+[2025-10-10 17:42:05] [SUCCESS] Yellow highlights removed
+[2025-10-10 17:42:05] [WARN] Attempting database connection for mail merge...
+[2025-10-10 17:42:05] [WARN] Performing mail merge for Project: H-025-999-25, Bridge: K160.0
+[2025-10-10 17:42:12] [ERROR] Failed to connect to database: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:42:12] [ERROR] Error during mail merge: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:42:12] [WARN] Database connection failed - preserving template content
+[2025-10-10 17:42:12] [ERROR] Error: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open server 'mendrop' requested by the login. Client with IP address '102.215.57.188' is not allowed to access the server.  To enable access, use the Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+[2025-10-10 17:42:12] [SUCCESS] All merge fields from template will be preserved and highlighted
+[2025-10-10 17:42:12] [INFO] Template content preserved - merge fields will be highlighted for manual completion
+[2025-10-10 17:42:12] [WARN] Adding highlights for remaining merge field patterns...
+[2025-10-10 17:42:13] [SUCCESS] Merge field patterns highlighted (both Â«fieldÂ» and <<field>> formats)
+[2025-10-10 17:42:13] [WARN] Saving document to: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:42:14] [SUCCESS] Document saved successfully
+[2025-10-10 17:42:15] [SUCCESS] Processing completed successfully!
+[2025-10-10 17:42:15] [INFO] Output file: C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:42:15] [INFO] === Processing Complete ===
+[2025-10-10 17:42:15] [SUCCESS] Generated file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
+[2025-10-10 17:42:15] [WARN] Creating Word template with VBA integration...
+[2025-10-10 17:42:15] [SUCCESS] VBA Code generated. This needs to be manually added to the Word template.
+[2025-10-10 17:42:15] [WARN] Save the following VBA code to a file for reference:
+[2025-10-10 17:42:16] [INFO] VBA code saved to: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:42:16] [INFO] VBA template code generated at: C:\Users\user\OneDrive\Documents\Work_Files\VBA_Code_for_Template.txt
+[2025-10-10 17:42:16] [SUCCESS] === SESSION COMPLETED SUCCESSFULLY ===
+[2025-10-10 17:42:16] [SUCCESS] Output file: False C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H-025-999-25_K160.0_DRAFT.docx
