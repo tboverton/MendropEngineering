@@ -10,7 +10,7 @@ param(
     [string]$OutputPath = "",
    
     [Parameter(Mandatory=$false)]
-    [string]$TemplatePath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm",
+    [string]$TemplatePath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H&H MASTER TESTING TEMPLATE - NEW LAYOUT - Report VIEW - New DSN.docx",
    
     [Parameter(Mandatory=$false)]
     [string]$ProjectNumber = "H-025-999-25",
@@ -33,7 +33,7 @@ if ($TemplatePath -eq "") {
 }
 
 # Database connection string
-$script:ConnectionString = "Driver={ODBC Driver 17 for SQL Server};" +
+$script:ConnectionString = "Driver={ODBC Driver 18 for SQL Server};" +
                           "Server=tcp:mendrop.database.windows.net;" +
                           "Database=MendropReportServer;" +
                           "UID=ReportUser;" +
@@ -101,7 +101,7 @@ function Get-ProjectNumbers {
         Write-ColorOutput "Retrieving project numbers from database..." "Yellow"
        
         $connection = Get-DatabaseConnection
-        $recordset = $connection.Execute("SELECT * FROM [dbo].[vwHandHReportFormFields] WHERE project_number = '$ProjectNumber'AND bridge_id = '$BridgeId' ")
+        $recordset = $connection.Execute("SELECT DISTINCT project_number FROM [dbo].[vwHandHReportFormFields]")
        
         $projects = @()
         while (-not $recordset.EOF) {
@@ -269,11 +269,12 @@ function Invoke-MailMerge {
        
         # Get data from database
         $connection = Get-DatabaseConnection
-        $query = "SELECT * FROM [dbo].[vwHandHReportFormFields] WHERE project_number = '$ProjectNumber' AND bridge_id = '$BridgeId'"
+        $query = "SELECT * FROM [dbo].[vwHandHReportFormFields] WHERE project_number = '$ProjectNumber'"
+        Write-ColorOutput "Executing query: $query" "Yellow"
         $recordset = $connection.Execute($query)
        
         if ($recordset.EOF) {
-            Write-ColorOutput "No data found for the specified project and bridge ID" "Red"
+            Write-ColorOutput "No data found for the specified project number" "Red"
             $recordset.Close()
             $connection.Close()
             return $false
@@ -327,55 +328,165 @@ function Invoke-MailMerge {
             Write-ColorOutput "Template expects fields like: $($templateFields[0..4] -join ', ')..." "Yellow"
         }
        
-        # Replace merge fields in document
-        $Range = $Document.Range()
-        $replacedFields = 0
-        foreach ($fieldName in $fieldData.Keys) {
-            try {
-                $fieldValue = $fieldData[$fieldName]
-                $fieldReplaced = $false
-               
-                # Try both merge field formats: «field» and <<field>>
-                $mergeFormats = @("«$fieldName»", "<<$fieldName>>")
-                
-                foreach ($mergeField in $mergeFormats) {
-                    # Reset range for each search
-                    $Range = $Document.Range()
-                    
-                    # Find and replace merge fields
-                    $Range.Find.ClearFormatting()
-                    $Range.Find.Replacement.ClearFormatting()
-                    $Range.Find.Text = $mergeField
-                    $Range.Find.Replacement.Text = $fieldValue
-                    
-                    # Set orange highlighting for replaced text
-                    $Range.Find.Replacement.Highlight = $true
-                    $Range.Find.Replacement.Font.Color = 255  # Orange color (RGB: 255, 165, 0)
-                    
-                    # Execute the find and replace with ReplaceAll (2)
-                    $replaceCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-                    
-                    if ($replaceCount -gt 0) {
-                        $fieldReplaced = $true
-                        Write-ColorOutput "Replaced field: $mergeField -> $fieldValue (Count: $replaceCount)" "Green"
-                    } else {
-                        Write-ColorOutput "Field not found in document: $mergeField" "Yellow"
-                    }
-                }
-                
-                if ($fieldReplaced) {
-                    $replacedFields++
-                }
-               
-            } catch {
-                Write-ColorOutput "Warning: Could not replace field '$fieldName': $($_.Exception.Message)" "Yellow"
-                # Continue with next field
-            }
-        }
+        # Use hybrid approach: Find MERGEFIELD codes and replace with database values
+        Write-ColorOutput "Processing MERGEFIELD codes with database values..." "Green"
         
-        Write-ColorOutput "Successfully replaced $replacedFields merge fields" "Green"
-       
-        Write-ColorOutput "Mail merge completed successfully" "Green"
+        # Track replaced fields
+        $replacedFields = 0
+        $replacedFieldNames = @()
+        
+        try {
+            # Get all fields in the document
+            $fields = $Document.Fields
+            Write-ColorOutput "Found $($fields.Count) fields in document" "Cyan"
+            
+            # First, let's analyze what types of fields we have
+            $fieldTypes = @{}
+            $mergeFields = @()
+            
+            foreach ($field in $fields) {
+                try {
+                    $fieldType = $field.Type
+                    if ($fieldTypes.ContainsKey($fieldType)) {
+                        $fieldTypes[$fieldType]++
+                    } else {
+                        $fieldTypes[$fieldType] = 1
+                    }
+                    
+                    # Check if this is a MERGEFIELD (type 59 in this document)
+                     if ($field.Type -eq 59) {
+                         $mergeFields += $field
+                     }
+                } catch {
+                    Write-ColorOutput "Error analyzing field: $($_.Exception.Message)" "Red"
+                }
+            }
+            
+            Write-ColorOutput "Field types found:" "Cyan"
+            foreach ($type in $fieldTypes.Keys) {
+                Write-ColorOutput "  Type $type`: $($fieldTypes[$type]) fields" "Cyan"
+            }
+            Write-ColorOutput "MERGEFIELD count: $($mergeFields.Count)" "Cyan"
+            
+            # Process each MERGEFIELD
+            foreach ($field in $mergeFields) {
+                try {
+                    # Get the field code text
+                    $fieldCode = $field.Code.Text
+                    Write-ColorOutput "Processing field code: $fieldCode" "Cyan"
+                    
+                    # Extract field name from MERGEFIELD code (handle quoted names)
+                     $fieldName = $null
+                     if ($fieldCode -match 'MERGEFIELD\s+"([^"]+)"') {
+                         $fieldName = $matches[1]
+                     } elseif ($fieldCode -match 'MERGEFIELD\s+([^\s\\]+)') {
+                         $fieldName = $matches[1]
+                     }
+                    
+                    if ($fieldName) {
+                        Write-ColorOutput "Extracted field name: $fieldName" "Cyan"
+                        
+                        # Check if we have data for this field
+                        if ($fieldData.ContainsKey($fieldName)) {
+                            $fieldValue = $fieldData[$fieldName]
+                            
+                            # Skip empty values
+                            if (-not [string]::IsNullOrWhiteSpace($fieldValue)) {
+                                # Update the field result
+                                $field.Select()
+                                $Document.Application.Selection.TypeText($fieldValue)
+                                
+                                # Highlight in yellow using proper method
+                                try {
+                                    $Document.Application.Selection.Range.HighlightColorIndex = 7  # wdYellow
+                                } catch {
+                                    # Alternative highlighting method
+                                    $Document.Application.Selection.Range.Font.HighlightColorIndex = 7
+                                }
+                                
+                                $replacedFields++
+                                $replacedFieldNames += $fieldName
+                                
+                                Write-ColorOutput "Replaced MERGEFIELD '$fieldName' with '$fieldValue'" "Green"
+                            } else {
+                                Write-ColorOutput "Empty value for MERGEFIELD '$fieldName'" "Yellow"
+                            }
+                        } else {
+                            Write-ColorOutput "No data found for MERGEFIELD '$fieldName'" "Yellow"
+                        }
+                    } else {
+                        Write-ColorOutput "Could not extract field name from: $fieldCode" "Red"
+                    }
+                } catch {
+                    Write-ColorOutput "Error processing field: $($_.Exception.Message)" "Red"
+                    continue
+                }
+            }
+            
+            Write-ColorOutput "Successfully replaced $replacedFields MERGEFIELD codes" "Green"
+            if ($replacedFields -gt 0) {
+                Write-ColorOutput "Fields replaced: $($replacedFieldNames -join ', ')" "Cyan"
+            } else {
+                Write-ColorOutput "No MERGEFIELD codes were found or replaced" "Yellow"
+                
+                # Alternative: Try to find and replace text patterns as fallback
+                Write-ColorOutput "Attempting fallback text replacement..." "Yellow"
+                
+                foreach ($fieldName in $fieldData.Keys) {
+                    $fieldValue = $fieldData[$fieldName]
+                    
+                    # Skip empty values
+                    if ([string]::IsNullOrWhiteSpace($fieldValue)) {
+                        continue
+                    }
+                    
+                    # Try common merge field patterns
+                    $patterns = @(
+                        "{ MERGEFIELD $fieldName }",
+                        "«$fieldName»",
+                        "<<$fieldName>>"
+                    )
+                    
+                    foreach ($pattern in $patterns) {
+                         $range = $Document.Content
+                         $range.Find.ClearFormatting()
+                         $range.Find.Replacement.ClearFormatting()
+                         $range.Find.Text = $pattern
+                         $range.Find.Replacement.Text = $fieldValue
+                         
+                         # Set highlighting for replacement
+                         try {
+                             $range.Find.Replacement.Highlight = $true
+                             $range.Find.Replacement.Font.HighlightColorIndex = 7  # wdYellow
+                         } catch {
+                             Write-ColorOutput "Could not set highlighting for replacement" "Yellow"
+                         }
+                         
+                         $range.Find.Forward = $true
+                         $range.Find.Wrap = 1  # wdFindContinue
+                         $range.Find.Format = $false
+                         $range.Find.MatchCase = $false
+                         $range.Find.MatchWholeWord = $false
+                         
+                         # Execute find and replace
+                         $found = $range.Find.Execute($null, $false, $false, $false, $false, $false, $true, 1, $true, $fieldValue, 2)
+                         
+                         if ($found) {
+                             $replacedFields++
+                             $replacedFieldNames += $fieldName
+                             Write-ColorOutput "Replaced pattern '$pattern' with '$fieldValue'" "Green"
+                             break  # Move to next field after first successful replacement
+                         }
+                     }
+                }
+                
+                Write-ColorOutput "Fallback replacement completed: $replacedFields fields" "Green"
+            }
+            
+        } catch {
+            Write-ColorOutput "Error during field processing: $($_.Exception.Message)" "Red"
+            return $false
+        }
         return $true
        
     } catch {
@@ -448,27 +559,8 @@ function Process-WordDocument {
             Write-ColorOutput "No project data provided - preserving all template content" "Yellow"
         }
        
-        # Step 3: Find and highlight remaining merge field patterns
-        Write-ColorOutput "Adding highlights for remaining merge field patterns..." "Yellow"
-       
-        $totalHighlighted = 0
-        
-        # Highlight remaining «*» patterns (guillemets)
-        $Range = $Document.Range()
-        $Range.Find.ClearFormatting()
-        $Range.Find.Replacement.ClearFormatting()
-        $Range.Find.Text = "«*»"
-        $Range.Find.MatchWildcards = $true
-        $Range.Find.Replacement.Highlight = $true
-        $Range.Find.Replacement.Text = "^&"  # Replace with same text but highlighted
-        $guillemetsCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-        if ($guillemetsCount) { $totalHighlighted++ }
-        
-        # Highlight remaining <<*>> patterns (angle brackets)
-        $Range = $Document.Range()
-        $Range.Find.ClearFormatting()
-        $Range.Find.Replacement.ClearFormatting()
-        $Range.Find.Text = "<<*>>"
+        # Step 3: Skip legacy text placeholder highlighting
+        Write-ColorOutput "Skipping legacy text-placeholder highlighting (using MERGEFIELD-based merge)" "Cyan"
         $Range.Find.MatchWildcards = $true
         $Range.Find.Replacement.Highlight = $true
         $Range.Find.Replacement.Text = "^&"  # Replace with same text but highlighted
@@ -580,7 +672,7 @@ Sub PickProjectReport()
     Dim connectionString As String
    
     ' Define connection string
-    connectionString = "Driver={ODBC Driver 17 for SQL Server};" & _
+    connectionString = "Driver={ODBC Driver 18 for SQL Server};" & _
                       "Server=tcp:mendrop.database.windows.net;" & _
                       "Database=MendropReportServer;" & _
                       "UID=ReportUser;" & _
