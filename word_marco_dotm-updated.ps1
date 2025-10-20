@@ -4,27 +4,27 @@
 
 param(
     [Parameter(Mandatory=$false)]
-    [string]$InputPath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm",
+    [string]$InputPath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H&H MASTER TESTING TEMPLATE - NEW LAYOUT - Report VIEW - New DSN.docx",
    
     [Parameter(Mandatory=$false)]
     [string]$OutputPath = "",
    
     [Parameter(Mandatory=$false)]
-    [string]$TemplatePath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.dotm",
+    [string]$TemplatePath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H&H MASTER TESTING TEMPLATE - NEW LAYOUT - Report VIEW - New DSN.docx",
    
-    [Parameter(Mandatory=$false)]
-    [string]$ProjectNumber = "H-025-999-25",
+    [Parameter(Mandatory=$false)] 
+    [string]$ProjectNumber = "H-025-999-25", 
    
     [Parameter(Mandatory=$false)]
     [string]$BridgeId = "K160.0",
    
-    [Parameter(Mandatory=$false)]
+    [Parameter(Mandatory=$false)] 
     [switch]$ShowProjectPicker = $false
 )
 
 # Set default paths based on current script location
 $script:ScriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Path
-$script:DefaultTemplatePath = Join-Path $script:ScriptDirectory "HandHPS.dotm"
+$script:DefaultTemplatePath = Join-Path $script:ScriptDirectory "H&H MASTER TESTING TEMPLATE - NEW LAYOUT - Report VIEW - New DSN.docx"
 $script:DefaultOutputDirectory = $script:ScriptDirectory
 
 # Use current directory template if not specified
@@ -33,7 +33,7 @@ if ($TemplatePath -eq "") {
 }
 
 # Database connection string
-$script:ConnectionString = "Driver={ODBC Driver 17 for SQL Server};" +
+$script:ConnectionString = "Driver={ODBC Driver 18 for SQL Server};" +
                           "Server=tcp:mendrop.database.windows.net;" +
                           "Database=MendropReportServer;" +
                           "UID=ReportUser;" +
@@ -42,6 +42,9 @@ $script:ConnectionString = "Driver={ODBC Driver 17 for SQL Server};" +
 # Logging configuration
 $script:LogFilePath = Join-Path $script:ScriptDirectory "word_processor_log.txt"
 $script:LoggingEnabled = $true
+
+# Highlight color configuration (Word: wdBrightGreen = 4)
+$script:HighlightColorIndex = 4
 
 # Function to write to log file
 function Write-LogFile {
@@ -54,7 +57,7 @@ function Write-LogFile {
         try {
             $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
             $logEntry = "[$timestamp] [$Level] $Message"
-            Add-Content -Path $script:LogFilePath -Value $logEntry -Encoding UTF8
+            Add-Content -Path $script:LogFilePath -Value $logEntry -Encoding UTF8 -ErrorAction SilentlyContinue
         } catch {
             # Silently continue if logging fails to avoid breaking the main script
         }
@@ -101,7 +104,7 @@ function Get-ProjectNumbers {
         Write-ColorOutput "Retrieving project numbers from database..." "Yellow"
        
         $connection = Get-DatabaseConnection
-        $recordset = $connection.Execute("SELECT * FROM [dbo].[vwHandHReportFormFields] WHERE project_number = '$ProjectNumber'AND bridge_id = '$BridgeId' ")
+        $recordset = $connection.Execute("SELECT DISTINCT project_number FROM [dbo].[vwHandHReportFormFields]")
        
         $projects = @()
         while (-not $recordset.EOF) {
@@ -121,34 +124,36 @@ function Get-ProjectNumbers {
     }
 }
 
-# # Function to get bridge IDs for a specific project
-# function Get-BridgeIds {
-#     param([string]$ProjectNumber)
+# Function to get bridge IDs for a specific project
+function Get-BridgeIds {
+    param([string]$ProjectNumber)
    
-#     try {
-#         Write-ColorOutput "Retrieving bridge IDs for project: $ProjectNumber" "Yellow"
+    try {
+        Write-ColorOutput "Retrieving bridge IDs for project: $ProjectNumber" "Yellow"
        
-#         $connection = Get-DatabaseConnection
-#         $query = "SELECT bridge_id FROM [dbo].[vwHandHReportFormFields] WHERE project_number = '$ProjectNumber' AND bridge_id = '$BridgeId'"
-#         $recordset = $connection.Execute($query)
+        $connection = Get-DatabaseConnection
+        $query = "SELECT DISTINCT bridge_id 
+                  FROM [dbo].[vwHandHReportFormFields] 
+                  WHERE project_number = '$ProjectNumber'"
+        $recordset = $connection.Execute($query)
        
-#         $bridgeIds = @()
-#         while (-not $recordset.EOF) {
-#             $bridgeIds += $recordset.Fields("bridge_id").Value
-#             $recordset.MoveNext()
-#         }
+        $bridgeIds = @()
+        while (-not $recordset.EOF) {
+            $bridgeIds += $recordset.Fields("bridge_id").Value
+            $recordset.MoveNext()
+        }
        
-#         $recordset.Close()
-#         $connection.Close()
+        $recordset.Close()
+        $connection.Close()
        
-#         Write-ColorOutput "Retrieved $($bridgeIds.Count) bridge IDs" "Green"
-#         return $bridgeIds
+        Write-ColorOutput "Retrieved $($bridgeIds.Count) bridge IDs" "Green"
+        return $bridgeIds
        
-#     } catch {
-#         Write-ColorOutput "Error retrieving bridge IDs: $($_.Exception.Message)" "Red"
-#         throw
-#     }
-# }
+    } catch {
+        Write-ColorOutput "Error retrieving bridge IDs: $($_.Exception.Message)" "Red"
+        throw
+    }
+}
 
 # Function to show project picker dialog
 function Show-ProjectPicker {
@@ -209,8 +214,8 @@ function Show-ProjectPicker {
            
             if ($projectCombo.SelectedItem) {
                 $bridgeIds = Get-BridgeIds -ProjectNumber $projectCombo.SelectedItem
-                $bridgeIds | ForEach-Object { $bridgeCombo.Items.Add($_) }
-                $bridgeCombo.Enabled = $true
+                $bridgeIds | ForEach-Object { if ($_ -and $_ -ne "") { $bridgeCombo.Items.Add($_) } }
+                $bridgeCombo.Enabled = ($bridgeCombo.Items.Count -gt 0)
             }
         })
        
@@ -269,11 +274,15 @@ function Invoke-MailMerge {
        
         # Get data from database
         $connection = Get-DatabaseConnection
-        $query = "SELECT * FROM [dbo].[vwHandHReportFormFields] WHERE project_number = '$ProjectNumber' AND bridge_id = '$BridgeId'"
+        $query = "SELECT * 
+                  FROM [dbo].[vwHandHReportFormFields] 
+                  WHERE project_number = '$ProjectNumber' 
+                    AND bridge_id = '$BridgeId'"
+        Write-ColorOutput "Executing query: $query" "Yellow"
         $recordset = $connection.Execute($query)
        
         if ($recordset.EOF) {
-            Write-ColorOutput "No data found for the specified project and bridge ID" "Red"
+            Write-ColorOutput "No data found for the specified project and bridge" "Red"
             $recordset.Close()
             $connection.Close()
             return $false
@@ -306,76 +315,169 @@ function Invoke-MailMerge {
        
         Write-ColorOutput "Retrieved $($fieldData.Count) fields from database" "Green"
         
-        # Show first few field names for debugging
-        $sampleFields = ($fieldData.Keys | Select-Object -First 10) -join ", "
-        Write-ColorOutput "Sample field names: $sampleFields" "Cyan"
-        
-        # Show template fields we're looking for (from the document you showed)
-        $templateFields = @("hydraulic_modeling_tool", "tool_version", "tool_source", "model_range_upstream", "upstream_bridge_id", "model_range_downstream", "geospatial_tool", "geospatial_software", "elevation_model_detail", "elevation_model_source", "elevation_model_website", "data_source_type", "data_source_location", "data_collection_year", "manning_n_min", "manning_n_max", "flood_event_1", "flood_event_2", "flood_event_3", "boundary_condition_type", "slope_value", "number_of_alternatives", "alt1_structure_type", "alt1_span_length", "alt1_total_length", "alt1_girder_depth", "alt1_low_chord_elevation", "alt1_length_comparison", "alt2_structure_type", "alt2_span_length", "alt2_total_length", "alt2_girder_depth", "alt2_low_chord_elevation", "alt2_length_comparison")
-        
-        $matchingFields = @()
-        foreach ($templateField in $templateFields) {
-            if ($fieldData.ContainsKey($templateField)) {
-                $matchingFields += $templateField
-            }
-        }
-        
-        if ($matchingFields.Count -gt 0) {
-            Write-ColorOutput "Found matching template fields: $($matchingFields -join ', ')" "Green"
-        } else {
-            Write-ColorOutput "No matching template fields found in database" "Yellow"
-            Write-ColorOutput "Template expects fields like: $($templateFields[0..4] -join ', ')..." "Yellow"
-        }
-       
-        # Replace merge fields in document
-        $Range = $Document.Range()
+        # Track replaced fields
         $replacedFields = 0
-        foreach ($fieldName in $fieldData.Keys) {
-            try {
+        $replacedFieldNames = @()
+        $missingFields = @()
+        $emptyFields = @()
+        
+        try {
+            # Get all fields in the document
+            $fields = $Document.Fields
+            Write-ColorOutput "Found $($fields.Count) fields in document" "Cyan"
+            
+            $mergeFields = @()
+            foreach ($field in $fields) {
+                try {
+                    if ($field.Type -eq 59) { # wdFieldMergeField
+                        $mergeFields += $field
+                    }
+                } catch {
+                    Write-ColorOutput "Error analyzing field: $($_.Exception.Message)" "Red"
+                }
+            }
+            Write-ColorOutput "MERGEFIELD count: $($mergeFields.Count)" "Cyan"
+            
+            # Process each MERGEFIELD
+            foreach ($field in $mergeFields) {
+                try {
+                    $fieldCode = $field.Code.Text
+                    
+                    # Extract field name from MERGEFIELD code (quoted or unquoted)
+                    $fieldName = $null
+                    if ($fieldCode -match 'MERGEFIELD\s+"([^"]+)"') {
+                        $fieldName = $matches[1]
+                    } elseif ($fieldCode -match 'MERGEFIELD\s+([^\s\\]+)') {
+                        $fieldName = $matches[1]
+                    }
+                    
+                    if (-not $fieldName) {
+                        Write-ColorOutput "Could not extract field name from: $fieldCode" "Yellow"
+                        continue
+                    }
+
+                    if (-not $fieldData.ContainsKey($fieldName)) {
+                        # Highlight orange (using wdDarkYellow = 14 as proxy for orange)
+                        try {
+                            $field.Result.HighlightColorIndex = 14
+                        } catch {}
+                        $missingFields += $fieldName
+                        Write-ColorOutput "MERGEFIELD '$fieldName' not found in database - highlighted orange" "Yellow"
+                        continue
+                    }
+
+                    $value = $fieldData[$fieldName]
+                    if ([string]::IsNullOrWhiteSpace($value)) {
+                        # Highlight yellow (wdYellow = 7)
+                        try {
+                            $field.Result.HighlightColorIndex = 7
+                        } catch {}
+                        $emptyFields += $fieldName
+                        Write-ColorOutput "MERGEFIELD '$fieldName' is empty in database - highlighted yellow" "Yellow"
+                        continue
+                    }
+
+                    # Replace the field's result text, then unlink to remove the field code
+                    # Capture the result range to re-apply highlight after unlink
+                    $resultRange = $field.Result.Duplicate
+                    $resultRange.Text = $value
+
+                    # Unlink converts the field to static text, removing the MERGEFIELD code
+                    try {
+                        $field.Unlink()
+                    } catch {
+                        # As a fallback: select field and type the value (rarely needed)
+                        try {
+                            $field.Select()
+                            $Document.Application.Selection.TypeText($value)
+                        } catch {
+                            Write-ColorOutput "Fallback selection replacement failed for '$fieldName': $($_.Exception.Message)" "Red"
+                            continue
+                        }
+                    }
+
+                    # Apply highlight to the replaced text only
+                    try {
+                        $resultRange.HighlightColorIndex = $script:HighlightColorIndex
+                    } catch {
+                        try { $resultRange.Font.HighlightColorIndex = $script:HighlightColorIndex } catch { }
+                    }
+
+                    $replacedFields++
+                    $replacedFieldNames += $fieldName
+                    Write-ColorOutput "Replaced MERGEFIELD '$fieldName' with '$value' and unlinked field" "Green"
+
+                } catch {
+                    Write-ColorOutput "Error processing MERGEFIELD: $($_.Exception.Message)" "Red"
+                    continue
+                }
+            }
+
+            if ($replacedFields -gt 0) {
+                Write-ColorOutput "Successfully replaced $replacedFields MERGEFIELD codes" "Green"
+                Write-ColorOutput "Fields replaced: $($replacedFieldNames -join ', ')" "Cyan"
+            } else {
+                Write-ColorOutput "No MERGEFIELD codes were found or replaced" "Yellow"
+            }
+
+            # Print missing and empty fields
+            if ($missingFields.Count -gt 0) {
+                Write-ColorOutput "Unmatched fields (not in database, highlighted orange): $($missingFields -join ', ')" "Yellow"
+            }
+            if ($emptyFields.Count -gt 0) {
+                Write-ColorOutput "Empty fields (empty/NULL in database, highlighted yellow): $($emptyFields -join ', ')" "Yellow"
+            }
+
+            # Fallback: Try to find and replace visible merge markers (e.g., «field», <<field>>, { MERGEFIELD field })
+            Write-ColorOutput "Attempting fallback text replacement..." "Yellow"
+
+            foreach ($fieldName in $fieldData.Keys) {
                 $fieldValue = $fieldData[$fieldName]
-                $fieldReplaced = $false
-               
-                # Try both merge field formats: «field» and <<field>>
-                $mergeFormats = @("«$fieldName»", "<<$fieldName>>")
-                
-                foreach ($mergeField in $mergeFormats) {
-                    # Reset range for each search
-                    $Range = $Document.Range()
-                    
-                    # Find and replace merge fields
-                    $Range.Find.ClearFormatting()
-                    $Range.Find.Replacement.ClearFormatting()
-                    $Range.Find.Text = $mergeField
-                    $Range.Find.Replacement.Text = $fieldValue
-                    
-                    # Set orange highlighting for replaced text
-                    $Range.Find.Replacement.Highlight = $true
-                    $Range.Find.Replacement.Font.Color = 255  # Orange color (RGB: 255, 165, 0)
-                    
-                    # Execute the find and replace with ReplaceAll (2)
-                    $replaceCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-                    
-                    if ($replaceCount -gt 0) {
-                        $fieldReplaced = $true
-                        Write-ColorOutput "Replaced field: $mergeField -> $fieldValue (Count: $replaceCount)" "Green"
-                    } else {
-                        Write-ColorOutput "Field not found in document: $mergeField" "Yellow"
+                if ([string]::IsNullOrWhiteSpace($fieldValue)) { continue }
+
+                $patterns = @(
+                    "{ MERGEFIELD $fieldName }",
+                    "«$fieldName»",
+                    "<<$fieldName>>"
+                )
+
+                foreach ($pattern in $patterns) {
+                    $range = $Document.Content
+                    $range.Find.ClearFormatting()
+                    $range.Find.Replacement.ClearFormatting()
+                    $range.Find.Text = $pattern
+                    $range.Find.Replacement.Text = $fieldValue
+
+                    # Attempt highlighting replacement text (Word Find/Replace doesn't always keep highlight)
+                    $range.Find.Forward = $true
+                    $range.Find.Wrap = 1  # wdFindContinue
+                    $range.Find.Format = $false
+                    $range.Find.MatchCase = $false
+                    $range.Find.MatchWholeWord = $false
+
+                    # Execute find and replace
+                    $found = $range.Find.Execute($null, $false, $false, $false, $false, $false, $true, 1, $true, $fieldValue, 2)
+                    if ($found) {
+                        # Re-find the inserted value to apply highlight
+                        $hlRange = $Document.Content
+                        $hlRange.Find.Text = $fieldValue
+                        $hlRange.Find.Execute()
+                        try { $hlRange.HighlightColorIndex = $script:HighlightColorIndex } catch { }
+
+                        $replacedFields++
+                        $replacedFieldNames += $fieldName
+                        Write-ColorOutput "Replaced pattern '$pattern' with '$fieldValue' (fallback)" "Green"
+                        break
                     }
                 }
-                
-                if ($fieldReplaced) {
-                    $replacedFields++
-                }
-               
-            } catch {
-                Write-ColorOutput "Warning: Could not replace field '$fieldName': $($_.Exception.Message)" "Yellow"
-                # Continue with next field
             }
+
+            Write-ColorOutput "Fallback replacement completed: $replacedFields fields" "Green"
+            
+        } catch {
+            Write-ColorOutput "Error during field processing: $($_.Exception.Message)" "Red"
+            return $false
         }
-        
-        Write-ColorOutput "Successfully replaced $replacedFields merge fields" "Green"
-       
-        Write-ColorOutput "Mail merge completed successfully" "Green"
         return $true
        
     } catch {
@@ -413,17 +515,25 @@ function Process-WordDocument {
        
         Write-ColorOutput "Document opened successfully" "Green"
        
-        # Step 1: Remove all yellow highlights
+        # Step 1: Remove all yellow highlights across all story ranges
         Write-ColorOutput "Removing yellow highlights..." "Yellow"
-        $Range = $Document.Range()
-       
-        # Find and remove yellow highlights (wdYellow = 7)
-        $Range.Find.ClearFormatting()
-        $Range.Find.Replacement.ClearFormatting()
-        $Range.Find.Highlight = $true
-        $Range.Find.Replacement.Highlight = $false
-        $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-       
+        try {
+            $storyRangeTypes = 1..12 # common Word story ranges
+            foreach ($type in $storyRangeTypes) {
+                try {
+                    $rng = $Document.StoryRanges.Item($type)
+                    while ($rng -ne $null) {
+                        # Clear highlight
+                        try { $rng.HighlightColorIndex = 0 } catch { }
+                        $rng = $rng.NextStoryRange
+                    }
+                } catch { }
+            }
+        } catch {
+            # Fallback single range method
+            $Range = $Document.Range()
+            try { $Range.HighlightColorIndex = 0 } catch { }
+        }
         Write-ColorOutput "Yellow highlights removed" "Green"
        
         # Step 2: Perform mail merge if project data is provided
@@ -432,60 +542,30 @@ function Process-WordDocument {
                 Write-ColorOutput "Attempting database connection for mail merge..." "Yellow"
                 $mergeSuccess = Invoke-MailMerge -Document $Document -ProjectNumber $ProjectNumber -BridgeId $BridgeId
                 if (-not $mergeSuccess) {
-                    Write-ColorOutput "Mail merge failed - no data found for project" "Yellow"
-                    # Insert project info manually when no data is found
-                    $Document.Range().InsertBefore("Project Number: $ProjectNumber`r`nBridge ID: $BridgeId`r`nGenerated: $(Get-Date -Format 'MM/dd/yyyy hh:mm tt')`r`n`r`n")
+                    Write-ColorOutput "Mail merge failed - no data found for project/bridge" "Yellow"
+                    Write-ColorOutput "Template layout preserved - merge fields will be highlighted for manual completion" "Cyan"
                 }
             } catch {
                 Write-ColorOutput "Database connection failed - preserving template content" "Yellow"
                 Write-ColorOutput "Error: $($_.Exception.Message)" "Red"
                 Write-ColorOutput "All merge fields from template will be preserved and highlighted" "Green"
-                # Insert project info manually since database is unavailable
-                $Document.Range().InsertBefore("Project Number: $ProjectNumber`r`nBridge ID: $BridgeId`r`nGenerated: $(Get-Date -Format 'MM/dd/yyyy hh:mm tt')`r`n`r`n")
                 Write-ColorOutput "Template content preserved - merge fields will be highlighted for manual completion" "Cyan"
             }
         } else {
             Write-ColorOutput "No project data provided - preserving all template content" "Yellow"
+            Write-ColorOutput "You can run with -ShowProjectPicker to select from DB" "Cyan"
         }
        
-        # Step 3: Find and highlight remaining merge field patterns
-        Write-ColorOutput "Adding highlights for remaining merge field patterns..." "Yellow"
-       
-        $totalHighlighted = 0
-        
-        # Highlight remaining «*» patterns (guillemets)
-        $Range = $Document.Range()
-        $Range.Find.ClearFormatting()
-        $Range.Find.Replacement.ClearFormatting()
-        $Range.Find.Text = "«*»"
-        $Range.Find.MatchWildcards = $true
-        $Range.Find.Replacement.Highlight = $true
-        $Range.Find.Replacement.Text = "^&"  # Replace with same text but highlighted
-        $guillemetsCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-        if ($guillemetsCount) { $totalHighlighted++ }
-        
-        # Highlight remaining <<*>> patterns (angle brackets)
-        $Range = $Document.Range()
-        $Range.Find.ClearFormatting()
-        $Range.Find.Replacement.ClearFormatting()
-        $Range.Find.Text = "<<*>>"
-        $Range.Find.MatchWildcards = $true
-        $Range.Find.Replacement.Highlight = $true
-        $Range.Find.Replacement.Text = "^&"  # Replace with same text but highlighted
-        $angleBracketsCount = $Range.Find.Execute("", $false, $false, $false, $false, $false, $true, 1, $false, "", 2)
-        if ($angleBracketsCount) { $totalHighlighted++ }
-       
-        Write-ColorOutput "Merge field patterns highlighted (both «field» and <<field>> formats)" "Green"
+        # Step 3: Skip legacy placeholder highlighting (already cleared above)
+        Write-ColorOutput "Skipping legacy text-placeholder highlighting; only replaced text is highlighted" "Cyan"
        
         # Step 4: Generate save path with project naming convention
         if ($SavePath -eq "") {
             $fileInfo = Get-Item $DocumentPath
             if ($ProjectNumber -and $BridgeId) {
-                # Use project_number_bridge_id_DRAFT.docx naming convention
                 $fileName = "${ProjectNumber}_${BridgeId}_DRAFT.docx"
                 $SavePath = Join-Path $fileInfo.DirectoryName $fileName
             } else {
-                # Default naming - preserve original extension or use .docx
                 $extension = if ($fileInfo.Extension -eq ".dotm" -or $fileInfo.Extension -eq ".dotx") { ".docx" } else { $fileInfo.Extension }
                 $SavePath = Join-Path $fileInfo.DirectoryName ($fileInfo.BaseName + "_processed" + $extension)
             }
@@ -493,8 +573,7 @@ function Process-WordDocument {
        
         Write-ColorOutput "Saving document to: $SavePath" "Yellow"
        
-        # Ensure we save as Word document format (not template)
-        # Use wdFormatDocumentDefault (16) for .docx format
+        # Save as .docx (wdFormatDocumentDefault = 16)
         $Document.SaveAs2($SavePath, 16)
        
         Write-ColorOutput "Document saved successfully" "Green"
@@ -529,15 +608,12 @@ function Process-WordDocument {
     }
 }
 
-# Function to create Word template with VBA integration
+# Function to create Word template with VBA integration (optional helper)
 function New-WordTemplateWithVBA {
     param([string]$TemplatePath = "handhps.dotm")
    
     try {
         Write-ColorOutput "Creating Word template with VBA integration..." "Yellow"
-       
-        # This function would create the .dotm template with embedded VBA
-        # For now, we'll provide the VBA code that needs to be manually added
        
         $vbaCode = @"
 ' VBA Code for handhps.dotm template
@@ -579,38 +655,31 @@ Sub PickProjectReport()
     Dim rs As Object
     Dim connectionString As String
    
-    ' Define connection string
-    connectionString = "Driver={ODBC Driver 17 for SQL Server};" & _
+    connectionString = "Driver={ODBC Driver 18 for SQL Server};" & _
                       "Server=tcp:mendrop.database.windows.net;" & _
                       "Database=MendropReportServer;" & _
                       "UID=ReportUser;" & _
                       "PWD=R3p0rtUs3r!;"
    
-    ' Create and open connection
     Set conn = CreateObject("ADODB.Connection")
     conn.Open connectionString
    
-    ' Execute query for projects
     Set rs = conn.Execute("SELECT DISTINCT project_number FROM [dbo].[vwHandHReportFormFields] ORDER BY project_number")
    
-    ' Populate ComboBox1
     frmProjectPicker.ComboBox1.Clear
     Do While Not rs.EOF
         frmProjectPicker.ComboBox1.AddItem rs.Fields("project_number").Value
         rs.MoveNext
     Loop
    
-    ' Show the form
     frmProjectPicker.Show
    
-    ' Clean up
     rs.Close
     conn.Close
     Set rs = Nothing
     Set conn = Nothing
 End Sub
 
-' Auto-launch on document open
 Private Sub Document_Open()
     PickProjectReport
 End Sub
@@ -651,7 +720,7 @@ try {
         # Prompt for template path if not provided
         if ($TemplatePath -eq "") {
             do {
-                $TemplatePath = Read-Host "Enter the path to the .dotm template file (or press Enter for default HandHPS.dotm)"
+                $TemplatePath = Read-Host "Enter the path to the .dotm/.docx template file (or press Enter for default)"
                 if ($TemplatePath -eq "") {
                     $TemplatePath = $script:DefaultTemplatePath
                 }
@@ -735,7 +804,7 @@ try {
     Write-ColorOutput "=== Processing Complete ===" "Cyan"
     Write-ColorOutput "Generated file: $result" "Green"
    
-    # Generate VBA template code if requested
+    # Generate VBA template code if requested (optional)
     if ($TemplatePath -like "*.dotm") {
         $vbaPath = New-WordTemplateWithVBA -TemplatePath $TemplatePath
         Write-ColorOutput "VBA template code generated at: $vbaPath" "Cyan"
