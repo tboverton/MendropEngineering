@@ -45,7 +45,8 @@ $script:LoggingEnabled = $true
 
 # Highlight color configuration
 $script:HighlightColorIndex = 4              # Green for merged values
-$script:OrangeHighlightColorIndex = 14       # Dark Yellow (proxy for Orange) for placeholders
+$script:YellowHighlightColorIndex = 7        # Light Yellow for NULL values, empty fields, missing database matches
+$script:OrangeHighlightColorIndex = 14       # Orange for unmerged placeholders
 
 # Function to write to log file
 function Write-LogFile {
@@ -283,9 +284,9 @@ function Invoke-MailMerge {
                     }
                     if (-not $fieldName) { Write-ColorOutput "Could not extract field name from: $fieldCode" "Yellow"; continue }
                     if (-not $fieldData.ContainsKey($fieldName)) {
-                        try { $field.Result.HighlightColorIndex = $script:OrangeHighlightColorIndex } catch {}
+                        try { $field.Result.HighlightColorIndex = $script:YellowHighlightColorIndex } catch {}
                         $missingFields += $fieldName
-                        Write-ColorOutput "MERGEFIELD '$fieldName' not found in database - highlighted orange" "Yellow"
+                        Write-ColorOutput "MERGEFIELD '$fieldName' not found in database - highlighted yellow" "Yellow"
                         continue
                     }
                     $value = $fieldData[$fieldName]
@@ -295,17 +296,17 @@ function Invoke-MailMerge {
                         try { $field.Unlink() } catch {
                             try { $field.Select(); $Document.Application.Selection.TypeText($value) } catch { }
                         }
-                        try { $resultRange.HighlightColorIndex = $script:OrangeHighlightColorIndex } catch {
-                            try { $resultRange.Font.HighlightColorIndex = $script:OrangeHighlightColorIndex } catch { }
+                        try { $resultRange.HighlightColorIndex = $script:YellowHighlightColorIndex } catch {
+                            try { $resultRange.Font.HighlightColorIndex = $script:YellowHighlightColorIndex } catch { }
                         }
                         $replacedFields++; $replacedFieldNames += $fieldName
-                        Write-ColorOutput "MERGEFIELD '$fieldName' value is NULL - replaced and highlighted orange" "Yellow"
+                        Write-ColorOutput "MERGEFIELD '$fieldName' value is NULL - replaced and highlighted yellow" "Yellow"
                         continue
                     }
                     if ([string]::IsNullOrWhiteSpace($value)) {
-                        try { $field.Result.HighlightColorIndex = $script:OrangeHighlightColorIndex } catch {}
+                        try { $field.Result.HighlightColorIndex = $script:YellowHighlightColorIndex } catch {}
                         $emptyFields += $fieldName
-                        Write-ColorOutput "MERGEFIELD '$fieldName' is empty in database - highlighted orange" "Yellow"
+                        Write-ColorOutput "MERGEFIELD '$fieldName' is empty in database - highlighted yellow" "Yellow"
                         continue
                     }
                     $resultRange = $field.Result.Duplicate
@@ -333,10 +334,10 @@ function Invoke-MailMerge {
                 Write-ColorOutput "No MERGEFIELD codes were found or replaced" "Yellow"
             }
             if ($missingFields.Count -gt 0) {
-                Write-ColorOutput "Unmatched fields (not in database, highlighted orange): $($missingFields -join ', ')" "Yellow"
+                Write-ColorOutput "Unmatched fields (not in database, highlighted yellow): $($missingFields -join ', ')" "Yellow"
             }
             if ($emptyFields.Count -gt 0) {
-                Write-ColorOutput "Empty fields (empty/NULL in database, highlighted orange): $($emptyFields -join ', ')" "Yellow"
+                Write-ColorOutput "Empty fields (empty/NULL in database, highlighted yellow): $($emptyFields -join ', ')" "Yellow"
             }
 
             # Fallback visible markers replacement for merged values only (keeps green highlighting for actual replacements)
@@ -384,87 +385,140 @@ function Invoke-MailMerge {
 function Highlight-UnmergedPlaceholders {
     param([object]$Document)
     try {
-        Write-ColorOutput "Highlighting unmerged placeholders using multiple methods..." "Yellow"
+        Write-ColorOutput "Highlighting unmerged placeholders..." "Yellow"
         $highlightedCount = 0
         
-        # Method 1: Iterate through all story ranges and use text comparison
-        $storyRanges = @($Document.StoryRanges)
-        foreach ($storyRange in $storyRanges) {
+        # Define all possible guillemet characters and their variations
+        $guillemets = @(
+            @{ Open = '«'; Close = '»'; Name = "Standard Guillemets" },
+            @{ Open = [char]0x00AB; Close = [char]0x00BB; Name = "Unicode Guillemets" },
+            @{ Open = [char]171; Close = [char]187; Name = "ANSI Guillemets" },
+            @{ Open = '<<'; Close = '>>'; Name = "Double Angle Brackets" }
+        )
+        
+        # Method 1: Use Word's Find and Replace to search for each guillemet type
+        foreach ($guillemet in $guillemets) {
             try {
-                if ($storyRange -eq $null) { continue }
+                Write-ColorOutput "Searching for $($guillemet.Name): $($guillemet.Open)...$($guillemet.Close)" "Yellow"
                 
-                $text = $storyRange.Text
-                if ([string]::IsNullOrEmpty($text)) { continue }
+                # Create a new range for each search
+                $range = $Document.Range()
+                $find = $range.Find
+                $find.ClearFormatting()
                 
-                # Look for guillemet patterns «...»
-                $startIndex = 0
-                while (($startIndex -lt $text.Length) -and ($startIndex -ne -1)) {
-                    $openPos = $text.IndexOf('«', $startIndex)
-                    if ($openPos -eq -1) { break }
-                    
-                    $closePos = $text.IndexOf('»', $openPos + 1)
-                    if ($closePos -eq -1) { break }
-                    
-                    # Found a potential placeholder
-                    $placeholderLength = $closePos - $openPos + 1
-                    if ($placeholderLength -gt 2) { # At least «x»
+                # Search for the specific guillemet pattern
+                $searchPattern = "$($guillemet.Open)*$($guillemet.Close)"
+                $find.Text = $searchPattern
+                $find.MatchWildcards = $true
+                $find.Forward = $true
+                $find.Wrap = 0  # wdFindStop
+                
+                $searchCount = 0
+                while ($find.Execute() -and $searchCount -lt 100) {  # Safety limit
+                    $searchCount++
+                    if ($find.Found) {
                         try {
-                            $placeholderRange = $storyRange.Duplicate
-                            $placeholderRange.Start = $storyRange.Start + $openPos
-                            $placeholderRange.End = $storyRange.Start + $closePos + 1
+                            $foundText = $range.Text
+                            Write-ColorOutput "Found potential placeholder: '$foundText'" "Cyan"
                             
-                            # Verify it's actually a placeholder (not part of regular text)
-                            $placeholderText = $placeholderRange.Text
-                            if ($placeholderText -match '^«[^»]+»$') {
-                                $placeholderRange.HighlightColorIndex = $script:OrangeHighlightColorIndex
+                            # Validate it looks like a field placeholder
+                            $isValidPlaceholder = $false
+                            
+                            # Check for field-like patterns
+                            if ($foundText -match "^$([regex]::Escape($guillemet.Open))[a-zA-Z_][a-zA-Z0-9_]*$([regex]::Escape($guillemet.Close))$") {
+                                $isValidPlaceholder = $true
+                            } elseif ($foundText -match "^$([regex]::Escape($guillemet.Open))[^$([regex]::Escape($guillemet.Close))]*_[^$([regex]::Escape($guillemet.Close))]*$([regex]::Escape($guillemet.Close))$") {
+                                $isValidPlaceholder = $true
+                            } elseif ($foundText.Length -gt ($guillemet.Open.Length + $guillemet.Close.Length + 2)) {
+                                # If it's reasonably long, consider it a placeholder
+                                $isValidPlaceholder = $true
+                            }
+                            
+                            if ($isValidPlaceholder) {
+                                $range.HighlightColorIndex = $script:OrangeHighlightColorIndex
                                 $highlightedCount++
-                                Write-ColorOutput "Highlighted guillemet placeholder: '$placeholderText'" "Yellow"
+                                Write-ColorOutput "Highlighted $($guillemet.Name) placeholder: '$foundText'" "Orange"
+                            } else {
+                                Write-ColorOutput "Skipped non-placeholder: '$foundText'" "DarkYellow"
                             }
                         } catch {
-                            # Continue with next placeholder
+                            Write-ColorOutput "Error highlighting found text: $($_.Exception.Message)" "Red"
                         }
                     }
-                    $startIndex = $closePos + 1
+                    
+                    # Move to next occurrence
+                    $range.Collapse(0)  # wdCollapseEnd
+                    if ($range.End -ge $Document.Range().End) { break }
                 }
                 
-                # Look for double-angle patterns <<...>>
-                $startIndex = 0
-                while (($startIndex -lt $text.Length) -and ($startIndex -ne -1)) {
-                    $openPos = $text.IndexOf('<<', $startIndex)
-                    if ($openPos -eq -1) { break }
-                    
-                    $closePos = $text.IndexOf('>>', $openPos + 2)
-                    if ($closePos -eq -1) { break }
-                    
-                    # Found a potential placeholder
-                    $placeholderLength = $closePos - $openPos + 2
-                    if ($placeholderLength -gt 4) { # At least <<x>>
-                        try {
-                            $placeholderRange = $storyRange.Duplicate
-                            $placeholderRange.Start = $storyRange.Start + $openPos
-                            $placeholderRange.End = $storyRange.Start + $closePos + 2
-                            
-                            # Verify it's actually a placeholder
-                            $placeholderText = $placeholderRange.Text
-                            if ($placeholderText -match '^<<[^>]+>>$') {
-                                $placeholderRange.HighlightColorIndex = $script:OrangeHighlightColorIndex
-                                $highlightedCount++
-                                Write-ColorOutput "Highlighted double-angle placeholder: '$placeholderText'" "Yellow"
-                            }
-                        } catch {
-                            # Continue with next placeholder
-                        }
-                    }
-                    $startIndex = $closePos + 2
-                }
+                Write-ColorOutput "Completed search for $($guillemet.Name): found $searchCount occurrences" "Green"
                 
-                # Clean up
-                if ($storyRange -ne $Document.StoryRanges.First) {
-                    [System.Runtime.InteropServices.Marshal]::ReleaseComObject($storyRange) | Out-Null
-                }
             } catch {
-                Write-ColorOutput "Warning: Error processing story range: $($_.Exception.Message)" "DarkYellow"
+                Write-ColorOutput "Error searching for $($guillemet.Name): $($_.Exception.Message)" "Red"
             }
+        }
+        
+        # Method 2: Manual character-by-character search as backup
+        try {
+            Write-ColorOutput "Performing manual character search as backup..." "Yellow"
+            
+            $range = $Document.Range()
+            $text = $range.Text
+            
+            if (-not [string]::IsNullOrEmpty($text)) {
+                # Look for any character that might be a guillemet
+                for ($i = 0; $i -lt $text.Length - 1; $i++) {
+                    $char = $text[$i]
+                    $charCode = [int][char]$char
+                    
+                    # Check if this character might be an opening guillemet
+                    $isOpenGuillemet = $false
+                    $closeChar = ''
+                    
+                    if ($char -eq '«' -or $charCode -eq 171 -or $charCode -eq 0x00AB) {
+                        $isOpenGuillemet = $true
+                        $closeChar = '»'
+                    } elseif ($char -eq '<' -and $i -lt $text.Length - 1 -and $text[$i + 1] -eq '<') {
+                        $isOpenGuillemet = $true
+                        $closeChar = '>>'
+                        $i++  # Skip the second <
+                    }
+                    
+                    if ($isOpenGuillemet) {
+                        # Look for the closing character
+                        $closePos = -1
+                        if ($closeChar -eq '>>') {
+                            $closePos = $text.IndexOf('>>', $i + 1)
+                        } else {
+                            for ($j = $i + 1; $j -lt $text.Length; $j++) {
+                                $closeCharCode = [int][char]$text[$j]
+                                if ($text[$j] -eq '»' -or $closeCharCode -eq 187 -or $closeCharCode -eq 0x00BB) {
+                                    $closePos = $j
+                                    break
+                                }
+                            }
+                        }
+                        
+                        if ($closePos -gt $i) {
+                            try {
+                                $length = if ($closeChar -eq '>>') { $closePos - $i + 2 } else { $closePos - $i + 1 }
+                                $placeholderRange = $Document.Range($range.Start + $i, $range.Start + $i + $length)
+                                $placeholderText = $placeholderRange.Text
+                                
+                                if ($placeholderText.Length -gt 3) {  # Minimum meaningful placeholder
+                                    $placeholderRange.HighlightColorIndex = $script:OrangeHighlightColorIndex
+                                    $highlightedCount++
+                                    Write-ColorOutput "Manual search highlighted: '$placeholderText'" "Orange"
+                                }
+                            } catch {
+                                # Continue with next character
+                            }
+                        }
+                    }
+                }
+            }
+        } catch {
+            Write-ColorOutput "Manual search failed: $($_.Exception.Message)" "Red"
         }
         
         # Method 2: Try simple Find without wildcards as backup
