@@ -4,13 +4,13 @@
 
 param(
     [Parameter(Mandatory=$false)]
-    [string]$InputPath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.docx",
+    [string]$InputPath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H&H MASTER TESTING TEMPLATE - NEW LAYOUT - Report VIEW - New DSN.docx",
    
     [Parameter(Mandatory=$false)]
     [string]$OutputPath = "",
    
     [Parameter(Mandatory=$false)]
-    [string]$TemplatePath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\HandHPS.docx",
+    [string]$TemplatePath = "C:\Users\user\OneDrive\Documents\Work_Files\Word Doc to database\H&H MASTER TESTING TEMPLATE - NEW LAYOUT - Report VIEW - New DSN.docx",
    
     [Parameter(Mandatory=$false)] 
     [string]$ProjectNumber = "H-025-999-25",

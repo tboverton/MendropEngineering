@@ -1,0 +1,74 @@
+﻿' VBA Code for handhps.dotm template
+' This code should be added to the template manually
+
+' UserForm: frmProjectPicker
+' Controls: ComboBox1 (project numbers), ComboBox2 (bridge IDs), btnSelect (command button)
+
+Private Sub btnSelect_Click()
+    Dim selectedProject As String
+    Dim selectedBridge As String
+   
+    selectedProject = ComboBox1.Value
+    selectedBridge = ComboBox2.Value
+   
+    If selectedProject = "" Or selectedBridge = "" Then
+        MsgBox "Please select both project number and bridge ID.", vbExclamation
+        Exit Sub
+    End If
+   
+    ' Call PowerShell script with selected values
+    Dim shell As Object
+    Dim psCommand As String
+   
+    Set shell = CreateObject("WScript.Shell")
+    psCommand = "powershell.exe -ExecutionPolicy Bypass -File ""C:\Git\MendropEngineering\MendropEngineering\word_highlight_processor.ps1"" " & _
+                "-TemplatePath """" " & _
+                "-ProjectNumber """ & selectedProject & """ " & _
+                "-BridgeId """ & selectedBridge & """"
+   
+    shell.Run psCommand, 0, True
+   
+    Me.Hide
+End Sub
+
+' Main macro in ThisDocument
+Sub PickProjectReport()
+    Dim conn As Object
+    Dim rs As Object
+    Dim connectionString As String
+   
+    ' Define connection string
+    connectionString = "Driver={ODBC Driver 17 for SQL Server};" & _
+                      "Server=tcp:mendrop.database.windows.net;" & _
+                      "Database=MendropReportServer;" & _
+                      "UID=ReportUser;" & _
+                      "PWD=R3p0rtUs3r!;"
+   
+    ' Create and open connection
+    Set conn = CreateObject("ADODB.Connection")
+    conn.Open connectionString
+   
+    ' Execute query for projects
+    Set rs = conn.Execute("SELECT DISTINCT project_number FROM [dbo].[vwHandHReportFormFields] ORDER BY project_number")
+   
+    ' Populate ComboBox1
+    frmProjectPicker.ComboBox1.Clear
+    Do While Not rs.EOF
+        frmProjectPicker.ComboBox1.AddItem rs.Fields("project_number").Value
+        rs.MoveNext
+    Loop
+   
+    ' Show the form
+    frmProjectPicker.Show
+   
+    ' Clean up
+    rs.Close
+    conn.Close
+    Set rs = Nothing
+    Set conn = Nothing
+End Sub
+
+' Auto-launch on document open
+Private Sub Document_Open()
+    PickProjectReport
+End Sub
